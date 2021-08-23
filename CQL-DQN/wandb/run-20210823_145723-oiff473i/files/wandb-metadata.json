@@ -1,0 +1,18 @@
+{
+    "os": "Linux-5.4.0-81-generic-x86_64-with-debian-bullseye-sid",
+    "python": "3.7.4",
+    "heartbeatAt": "2021-08-23T12:57:24.381238",
+    "startedAt": "2021-08-23T12:57:23.073703",
+    "docker": null,
+    "gpu": "GeForce MX150",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "codePath": "train.py",
+    "program": "train.py",
+    "host": "sebastian-VLT-WX0",
+    "username": "sebastian",
+    "executable": "/home/sebastian/anaconda3/bin/python"
+}

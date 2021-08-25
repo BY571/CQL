@@ -11,17 +11,15 @@ from buffer import ReplayBuffer
 import glob
 from utils import save, collect_random
 import random
-from agent import CQL
+from agent import CQLSAC
 
 def get_config():
     parser = argparse.ArgumentParser(description='RL')
-    parser.add_argument("--run_name", type=str, default="CQL-DQN", help="Run name, default: CQL-DQN")
-    parser.add_argument("--env", type=str, default="CartPole-v0", help="Gym environment name, default: CartPole-v0")
+    parser.add_argument("--run_name", type=str, default="CQL-SAC", help="Run name, default: CQL-SAC")
+    parser.add_argument("--env", type=str, default="Pendulum-v0", help="Gym environment name, default: Pendulum-v0")
     parser.add_argument("--episodes", type=int, default=300, help="Number of episodes, default: 200")
     parser.add_argument("--buffer_size", type=int, default=100_000, help="Maximal training dataset size, default: 100_000")
     parser.add_argument("--seed", type=int, default=1, help="Seed, default: 1")
-    parser.add_argument("--min_eps", type=float, default=0.01, help="Minimal Epsilon, default: 4")
-    parser.add_argument("--eps_frames", type=int, default=1e3, help="Number of steps for annealing the epsilon value to the min epsilon, default: 1e-5")
     parser.add_argument("--log_video", type=int, default=0, help="Log agent behaviour to wanbd when set to 1, default: 0")
     parser.add_argument("--save_every", type=int, default=100, help="Saves the network every x epochs, default: 25")
     
@@ -39,21 +37,19 @@ def train(config):
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     
-    eps = 1.
-    d_eps = 1 - config.min_eps
     steps = 0
     average10 = deque(maxlen=10)
     total_steps = 0
     
     with wandb.init(project="CQL", name=config.run_name, config=config):
         
-        agent = CQLAgent(state_size=env.observation_space.shape,
-                         action_size=env.action_space.n,
+        agent = CQLSAC(state_size=env.observation_space.shape[0],
+                         action_size=env.action_space.shape[0],
                          device=device)
 
-        wandb.watch(agent.network, log="gradients", log_freq=10)
+        wandb.watch(agent, log="gradients", log_freq=10)
 
-        buffer = ReplayBuffer(buffer_size=config.buffer_size, batch_size=32, device=device)
+        buffer = ReplayBuffer(buffer_size=config.buffer_size, batch_size=256, device=device)
         
         collect_random(env=env, dataset=buffer, num_samples=10000)
         
@@ -65,15 +61,14 @@ def train(config):
             episode_steps = 0
             rewards = 0
             while True:
-                action = agent.get_action(state, epsilon=eps)
+                action = agent.get_action(state)
                 steps += 1
-                next_state, reward, done, _ = env.step(action[0])
+                next_state, reward, done, _ = env.step(action)
                 buffer.add(state, action, reward, next_state, done)
-                loss, cql_loss, bellmann_error = agent.learn(buffer.sample())
+                policy_loss, alpha_loss, bellmann_error1, bellmann_error2, cql1_loss, cql2_loss = agent.learn(steps, buffer.sample(), gamma=0.99)
                 state = next_state
                 rewards += reward
                 episode_steps += 1
-                eps = max(1 - ((steps*d_eps)/config.eps_frames), config.min_eps)
                 if done:
                     break
 
@@ -81,16 +76,18 @@ def train(config):
 
             average10.append(rewards)
             total_steps += episode_steps
-            print("Episode: {} | Reward: {} | Q Loss: {} | Steps: {}".format(i, rewards, loss, steps,))
+            print("Episode: {} | Reward: {} | Polciy Loss: {} | Steps: {}".format(i, rewards, policy_loss, steps,))
             
             wandb.log({"Reward": rewards,
                        "Average10": np.mean(average10),
                        "Steps": total_steps,
-                       "Q Loss": loss,
-                       "CQL Loss": cql_loss,
-                       "Bellmann error": bellmann_error,
+                       "Policy Loss": policy_loss,
+                       "Alpha Loss": alpha_loss,
+                       "CQL1 Loss": cql1_loss,
+                       "CQL2 Loss": cql2_loss,
+                       "Bellmann error 1": bellmann_error1,
+                       "Bellmann error 2": bellmann_error2,
                        "Steps": steps,
-                       "Epsilon": eps,
                        "Episode": i,
                        "Buffer size": buffer.__len__()})
 

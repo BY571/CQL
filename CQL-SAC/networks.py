@@ -13,7 +13,7 @@ def hidden_init(layer):
 class Actor(nn.Module):
     """Actor (Policy) Model."""
 
-    def __init__(self, state_size, action_size, seed, device, hidden_size=32, init_w=3e-3, log_std_min=-20, log_std_max=2):
+    def __init__(self, state_size, action_size, hidden_size=32, init_w=3e-3, log_std_min=-20, log_std_max=2):
         """Initialize parameters and build model.
         Params
         ======
@@ -24,8 +24,6 @@ class Actor(nn.Module):
             fc2_units (int): Number of nodes in second hidden layer
         """
         super(Actor, self).__init__()
-        self.seed = torch.manual_seed(seed)
-        self.device = device
         self.log_std_min = log_std_min
         self.log_std_max = log_std_max
         
@@ -49,7 +47,7 @@ class Actor(nn.Module):
         mu, log_std = self.forward(state)
         std = log_std.exp()
         dist = Normal(mu, std)
-        e = dist.rsample().to(self.device)
+        e = dist.rsample().to(state.device)
         action = torch.tanh(e)
         log_prob = (dist.log_prob(e) - torch.log(1 - action.pow(2) + epsilon)).sum(1, keepdim=True)
 
@@ -64,7 +62,7 @@ class Actor(nn.Module):
         mu, log_std = self.forward(state)
         std = log_std.exp()
         dist = Normal(mu, std)
-        e = dist.rsample().to(self.device)
+        e = dist.rsample().to(state.device)
         action = torch.tanh(e)
         return action.detach().cpu()
     
@@ -76,7 +74,7 @@ class Actor(nn.Module):
 class Critic(nn.Module):
     """Critic (Value) Model."""
 
-    def __init__(self, state_size, action_size, seed, device, hidden_size=32):
+    def __init__(self, state_size, action_size, hidden_size=32):
         """Initialize parameters and build model.
         Params
         ======
@@ -86,8 +84,6 @@ class Critic(nn.Module):
             hidden_size (int): Number of nodes in the network layers
         """
         super(Critic, self).__init__()
-        self.seed = torch.manual_seed(seed)
-        self.device = device
         self.fc1 = nn.Linear(state_size+action_size, hidden_size)
         self.fc2 = nn.Linear(hidden_size, hidden_size)
         self.fc3 = nn.Linear(hidden_size, 1)

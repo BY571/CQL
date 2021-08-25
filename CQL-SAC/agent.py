@@ -4,6 +4,7 @@ import torch.nn.functional as F
 import torch.nn as nn
 from networks import Critic, Actor
 import numpy as np
+import math
 
 class CQLSAC(nn.Module):
     """Interacts with and learns from the environment."""
@@ -38,8 +39,7 @@ class CQLSAC(nn.Module):
         self.alpha_optimizer = optim.Adam(params=[self.log_alpha], lr=3e-4) 
         
         # CQL params
-        self.min_q_weight = 1.0
-
+        self.cql_weight = 1.0
         
         # Actor Network 
 
@@ -81,6 +81,20 @@ class CQLSAC(nn.Module):
         actor_loss = ((alpha * log_pis.cpu() - min_Q )).mean()
         return actor_loss, log_pis
 
+    def _compute_policy_values(self, obs_pi, obs_q):
+        with torch.no_grad():
+            actions_pred, log_pis = self.actor_local.evaluate(obs_pi)
+        
+        qs1 = self.critic1(obs_q, actions_pred)
+        qs2 = self.critic2(obs_q, actions_pred)
+        
+        return qs1-log_pis, qs2-log_pis
+    
+    def _compute_random_values(self, obs, actions, critic):
+        random_values = critic(obs, actions)
+        random_log_probs = math.log(0.5 ** self.action_size)
+        return random_values - random_log_probs
+    
     def learn(self, step, experiences, gamma, d=1):
         """Updates actor, critics and entropy_alpha parameters using given batch of experience tuples.
         Q_targets = r + γ * (min_critic_target(next_state, actor_target(next_state)) - α *log_pi(next_action|next_state))
@@ -125,37 +139,20 @@ class CQLSAC(nn.Module):
         temp_states = states.unsqueeze(1).repeat(1, num_repeat, 1).view(states.shape[0] * num_repeat, states.shape[1])
         temp_next_states = next_states.unsqueeze(1).repeat(1, num_repeat, 1).view(next_states.shape[0] * num_repeat, next_states.shape[1])
         
-        current_actions, log_pis = self.actor_local.evaluate(temp_states)
-        new_actions, new_log_pis = self.actor_local.evaluate(temp_next_states)
+        current_pi_values1, current_pi_values2  = self._compute_policy_values(temp_states, temp_states)
+        next_pi_values1, next_pi_values2 = self._compute_policy_values(temp_next_states, temp_states)
+        random_values1 = self._compute_random_values(temp_states, random_actions, self.critic1)
+        random_values2 = self._compute_random_values(temp_states, random_actions, self.critic2)
         
-
+        cat_q1 = torch.cat([current_pi_values1, next_pi_values1, random_values1], 1)
+        cat_q2 = torch.cat([current_pi_values2, next_pi_values2, random_values2], 1)
         
-        q1_random = self.critic1(temp_states, random_actions).view(states.shape[0], num_repeat, 1)
-        q2_random = self.critic2(temp_states, random_actions).view(states.shape[0], num_repeat, 1)
-        
-        q1_a_s = self.critic1(current_actions, temp_states).view(states.shape[0], num_repeat, 1)
-        q2_a_s = self.critic2(current_actions, temp_states).view(states.shape[0], num_repeat, 1)
-        
-        q1_next_a_s = self.critic1(new_actions, temp_states).view(states.shape[0], num_repeat, 1)
-        q2_next_a_s = self.critic2(new_actions, temp_states).view(states.shape[0], num_repeat, 1)
-        
-        cat_q1 = torch.cat([q1_random, q1.unsqueeze(1), q1_next_a_s, q1_a_s], 1)
-        cat_q2 = torch.cat([q2_random, q2.unsqueeze(1), q2_next_a_s, q2_a_s], 1)
-        
-        # importance sammpling
-        random_density = np.log(0.5 ** current_actions.shape[-1])
-        cat_q1 = torch.cat(
-            [q1_random - random_density, q1_next_a_s - new_log_pis.detach().view(states.shape[0], 10, 1), q1_a_s - log_pis.detach().view(states.shape[0], 10, 1)], 1
-        )
-        cat_q2 = torch.cat(
-            [q2_random - random_density, q2_next_a_s - new_log_pis.detach().view(states.shape[0], 10, 1), q2_a_s - log_pis.detach().view(states.shape[0], 10, 1)], 1
-        )
     
-        cql1_loss = torch.logsumexp(cat_q1 / 10, dim=1).mean() - q1.mean()
-        cql2_loss = torch.logsumexp(cat_q2 / 10, dim=1).mean() - q2.mean()
+        cql1_loss = torch.logsumexp(cat_q1, dim=1).mean() - q1.mean()
+        cql2_loss = torch.logsumexp(cat_q2, dim=1).mean() - q2.mean()
         
-        total_c1_loss = critic1_loss + cql1_loss
-        total_c2_loss = critic2_loss + cql2_loss
+        total_c1_loss = critic1_loss + cql1_loss * self.cql_weight
+        total_c2_loss = critic2_loss + cql2_loss * self.cql_weight
         
         
         # Update critics

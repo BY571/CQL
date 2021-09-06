@@ -74,7 +74,7 @@ class Actor(nn.Module):
 class Critic(nn.Module):
     """Critic (Value) Model."""
 
-    def __init__(self, state_size, action_size, hidden_size=32):
+    def __init__(self, state_size, action_size, hidden_size=32, seed=1):
         """Initialize parameters and build model.
         Params
         ======
@@ -84,6 +84,7 @@ class Critic(nn.Module):
             hidden_size (int): Number of nodes in the network layers
         """
         super(Critic, self).__init__()
+        self.seed = torch.manual_seed(seed)
         self.fc1 = nn.Linear(state_size+action_size, hidden_size)
         self.fc2 = nn.Linear(hidden_size, hidden_size)
         self.fc3 = nn.Linear(hidden_size, 1)

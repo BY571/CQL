@@ -65,7 +65,7 @@ def train(config):
                 steps += 1
                 next_state, reward, done, _ = env.step(action)
                 buffer.add(state, action, reward, next_state, done)
-                policy_loss, alpha_loss, bellmann_error1, bellmann_error2, cql1_loss, cql2_loss = agent.learn(steps, buffer.sample(), gamma=0.99)
+                policy_loss, alpha_loss, bellmann_error1, bellmann_error2, cql1_loss, cql2_loss, current_alpha = agent.learn(steps, buffer.sample(), gamma=0.99)
                 state = next_state
                 rewards += reward
                 episode_steps += 1
@@ -87,6 +87,7 @@ def train(config):
                        "CQL2 Loss": cql2_loss,
                        "Bellmann error 1": bellmann_error1,
                        "Bellmann error 2": bellmann_error2,
+                       "Alpha": current_alpha,
                        "Steps": steps,
                        "Episode": i,
                        "Buffer size": buffer.__len__()})

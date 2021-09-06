@@ -11,8 +11,8 @@
 ![alt_text](imgs/cql_dqn.png)
 
 # SAC-CQL
--> check why bellmann loss and cql loss are the same for critic 1 and critic 2
--> [ ]
+![alt_text](imgs/sac_cql_wo_alpha.png)
+-> add alpha learning (lagrangian) [ ]
 # Results
 
 -> wandb project [ ]

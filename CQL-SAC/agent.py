@@ -63,7 +63,7 @@ class CQLSAC(nn.Module):
         # Critic Network (w/ Target Network)
 
         self.critic1 = Critic(state_size, action_size, hidden_size, 2).to(device)
-        self.critic2 = Critic(state_size, action_size, hidden_size, 2).to(device)
+        self.critic2 = Critic(state_size, action_size, hidden_size, 1).to(device)
         
         assert self.critic1.parameters() != self.critic2.parameters()
         
@@ -198,11 +198,11 @@ class CQLSAC(nn.Module):
         
         # add lagrange alpha temperature and clip for stability
         # clipped_alpha = self.cql_log_alpha.exp().clamp(0, 1e6).item()
-        # cql1_loss = clipped_alpha * (cql1_scaled_loss - self.alpha_threshold)
-        # cql2_loss = clipped_alpha * (cql2_scaled_loss - self.alpha_threshold)
+        # cql1_scaled_loss = clipped_alpha * (cql1_scaled_loss - self.alpha_threshold)
+        # cql2_scaled_loss = clipped_alpha * (cql2_scaled_loss - self.alpha_threshold)
         
-        total_c1_loss = critic1_loss + cql1_scaled_loss# + cql1_loss * self.cql_weight
-        total_c2_loss = critic2_loss + cql2_scaled_loss # + cql2_loss * self.cql_weight
+        total_c1_loss = critic1_loss + cql1_scaled_loss# * self.cql_weight
+        total_c2_loss = critic2_loss + cql2_scaled_loss # * self.cql_weight
         
         
         # Update critics

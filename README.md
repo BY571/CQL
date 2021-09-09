@@ -16,6 +16,9 @@ PyTorch implementation of the CQL algorithm ([Paper](https://arxiv.org/pdf/2006.
 # Results
 -> wandb project [ ]
 
+# TODO:
+- update readme [ ]
+- add distributional Q-Function [ ]
 
 ## Help and issues:
 Im open for feedback, found bugs, improvements or anything. Just leave me a message or contact me.

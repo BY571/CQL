@@ -105,7 +105,7 @@ class CQLSAC(nn.Module):
         return qs1-log_pis, qs2-log_pis
     
     def _compute_random_values(self, obs, actions, critic):
-        random_values = critic(obs, actions)
+        random_values = critic.get_qvalues(obs, actions)
         random_log_probs = math.log(0.5 ** self.action_size)
         return random_values - random_log_probs
     

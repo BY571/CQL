@@ -47,13 +47,12 @@ class CQLSAC(nn.Module):
         self.alpha_optimizer = optim.Adam(params=[self.log_alpha], lr=learning_rate) 
         
         # CQL params
+        self.with_lagrange = False
+        self.temp = 1.0
         self.cql_weight = 1.0
-        self.alpha_threshold = 5.
-        init_alpha = 5
-        self.cql_init_alpha = torch.log(torch.FloatTensor([init_alpha]))
-        self.cql_log_alpha = torch.tensor([self.cql_init_alpha], requires_grad=True)
-        self.cql_alpha = self.cql_log_alpha.exp().detach()
-        self.cql_alpha_optimizer = optim.Adam(params=[self.cql_alpha], lr=learning_rate) 
+        self.target_action_gap = 0.0
+        self.cql_log_alpha = torch.zeros(1, requires_grad=True)
+        self.cql_alpha_optimizer = optim.Adam(params=[self.cql_log_alpha], lr=learning_rate) 
         
         # Actor Network 
 
@@ -143,10 +142,6 @@ class CQLSAC(nn.Module):
         # ---------------------------- update critic ---------------------------- #
         # Get predicted next-state actions and Q values from target models
         with torch.no_grad():
-            # next_action, log_pis_next = self.actor_local.evaluate(next_states)
-
-            # Q_target1_next = self.critic1_target(next_states.to(self.device), next_action.squeeze(0).to(self.device))
-            # Q_target2_next = self.critic2_target(next_states.to(self.device), next_action.squeeze(0).to(self.device))
             next_action, _ = self.actor_local.evaluate(next_states)
             next_action = next_action.unsqueeze(1).repeat(1, 10, 1).view(next_action.shape[0] * 10, next_action.shape[1])
             temp_next_states = next_states.unsqueeze(1).repeat(1, 10, 1).view(next_states.shape[0] * 10, next_states.shape[1])
@@ -193,22 +188,29 @@ class CQLSAC(nn.Module):
         assert cat_q2.shape == (states.shape[0], 3 * num_repeat, 1), f"cat_q2 instead has shape: {cat_q2.shape}"
         
 
-        cql1_scaled_loss = (torch.logsumexp(cat_q1, dim=1).mean() - q1.mean()) * self.cql_weight
-        cql2_scaled_loss = (torch.logsumexp(cat_q2, dim=1).mean() - q2.mean()) * self.cql_weight
+        cql1_scaled_loss = (torch.logsumexp(cat_q1 / self.temp, dim=1).mean() * self.cql_weight * self.temp - q1.mean()) * self.cql_weight
+        cql2_scaled_loss = (torch.logsumexp(cat_q2 / self.temp, dim=1).mean() * self.cql_weight * self.temp - q2.mean()) * self.cql_weight
         
-        # add lagrange alpha temperature and clip for stability
-        # clipped_alpha = self.cql_log_alpha.exp().clamp(0, 1e6).item()
-        # cql1_scaled_loss = clipped_alpha * (cql1_scaled_loss - self.alpha_threshold)
-        # cql2_scaled_loss = clipped_alpha * (cql2_scaled_loss - self.alpha_threshold)
+        cql_alpha_loss = torch.FloatTensor([0.0])
+        cql_alpha = torch.FloatTensor([0.0])
+        if self.with_lagrange:
+            cql_alpha = torch.clamp(self.cql_log_alpha.exp(), min=0.0, max=1000000.0).to(self.device)
+            cql1_scaled_loss = cql_alpha * (cql1_scaled_loss - self.target_action_gap)
+            cql2_scaled_loss = cql_alpha * (cql2_scaled_loss - self.target_action_gap)
+
+            self.cql_alpha_optimizer.zero_grad()
+            cql_alpha_loss = (- cql1_scaled_loss - cql2_scaled_loss) * 0.5 
+            cql_alpha_loss.backward(retain_graph=True)
+            self.cql_alpha_optimizer.step()
         
-        total_c1_loss = critic1_loss + cql1_scaled_loss# * self.cql_weight
-        total_c2_loss = critic2_loss + cql2_scaled_loss # * self.cql_weight
+        total_c1_loss = critic1_loss + cql1_scaled_loss
+        total_c2_loss = critic2_loss + cql2_scaled_loss
         
         
         # Update critics
         # critic 1
         self.critic1_optimizer.zero_grad()
-        total_c1_loss.backward()
+        total_c1_loss.backward(retain_graph=True)
         clip_grad_norm_(self.critic1.parameters(), self.clip_grad_param)
         self.critic1_optimizer.step()
         # critic 2
@@ -221,7 +223,7 @@ class CQLSAC(nn.Module):
         self.soft_update(self.critic1, self.critic1_target)
         self.soft_update(self.critic2, self.critic2_target)
         
-        return actor_loss.item(), alpha_loss.item(), critic1_loss.item(), critic2_loss.item(), cql1_scaled_loss.item(), cql2_scaled_loss.item(), current_alpha
+        return actor_loss.item(), alpha_loss.item(), critic1_loss.item(), critic2_loss.item(), cql1_scaled_loss.item(), cql2_scaled_loss.item(), current_alpha, cql_alpha_loss.item(), cql_alpha.item()
 
     def soft_update(self, local_model , target_model):
         """Soft update model parameters.

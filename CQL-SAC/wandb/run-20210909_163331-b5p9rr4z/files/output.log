@@ -1,0 +1,37 @@
+/home/sebastian/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py:974: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+Episode: 1 | Reward: -905.77389566085 | Polciy Loss: 11.843832015991211 | Steps: 200
+Episode: 2 | Reward: -1351.3587805433697 | Polciy Loss: 22.276145935058594 | Steps: 400
+Episode: 3 | Reward: -1410.2383058915402 | Polciy Loss: 33.99720001220703 | Steps: 600
+Episode: 4 | Reward: -1834.5045446103231 | Polciy Loss: 45.02235794067383 | Steps: 800
+Episode: 5 | Reward: -1200.6669861832365 | Polciy Loss: 57.904273986816406 | Steps: 1000
+Episode: 6 | Reward: -1345.5898231944866 | Polciy Loss: 67.23211669921875 | Steps: 1200
+Episode: 7 | Reward: -860.4879167156045 | Polciy Loss: 81.10021209716797 | Steps: 1400
+Episode: 8 | Reward: -914.7906782652036 | Polciy Loss: 94.6240234375 | Steps: 1600
+Episode: 9 | Reward: -1100.7776731811134 | Polciy Loss: 103.40765380859375 | Steps: 1800
+Episode: 10 | Reward: -1121.413221304348 | Polciy Loss: 108.78763580322266 | Steps: 2000
+Episode: 11 | Reward: -1080.1039770999892 | Polciy Loss: 121.8902816772461 | Steps: 2200
+Episode: 12 | Reward: -1161.5235324362682 | Polciy Loss: 128.44293212890625 | Steps: 2400
+Episode: 13 | Reward: -1145.3405313575613 | Polciy Loss: 136.03521728515625 | Steps: 2600
+Episode: 14 | Reward: -1161.0738960541441 | Polciy Loss: 151.51722717285156 | Steps: 2800
+Episode: 15 | Reward: -1189.0280626279978 | Polciy Loss: 156.224365234375 | Steps: 3000
+Episode: 16 | Reward: -1201.943998401903 | Polciy Loss: 162.54100036621094 | Steps: 3200
+Episode: 17 | Reward: -1295.316690295257 | Polciy Loss: 176.13336181640625 | Steps: 3400
+Episode: 18 | Reward: -1290.7562770642437 | Polciy Loss: 183.85986328125 | Steps: 3600
+Episode: 19 | Reward: -1189.0550434807474 | Polciy Loss: 190.98672485351562 | Steps: 3800
+Episode: 20 | Reward: -1319.694103828862 | Polciy Loss: 200.98358154296875 | Steps: 4000
+Episode: 21 | Reward: -1302.8555155857912 | Polciy Loss: 204.86802673339844 | Steps: 4200
+Episode: 22 | Reward: -1323.2897707168997 | Polciy Loss: 215.42694091796875 | Steps: 4400
+Episode: 23 | Reward: -1059.871757531859 | Polciy Loss: 229.40774536132812 | Steps: 4600
+Episode: 24 | Reward: -1343.566864314577 | Polciy Loss: 239.1412811279297 | Steps: 4800
+Episode: 25 | Reward: -1037.9918481634727 | Polciy Loss: 248.99964904785156 | Steps: 5000
+Episode: 26 | Reward: -1306.41122717106 | Polciy Loss: 254.18934631347656 | Steps: 5200
+Episode: 27 | Reward: -1332.9801988488018 | Polciy Loss: 266.42608642578125 | Steps: 5400
+Episode: 28 | Reward: -1338.055541991086 | Polciy Loss: 279.1912841796875 | Steps: 5600
+Episode: 29 | Reward: -1229.4813488364707 | Polciy Loss: 283.6290283203125 | Steps: 5800
+Episode: 30 | Reward: -1336.4924241938857 | Polciy Loss: 293.44305419921875 | Steps: 6000
+Episode: 31 | Reward: -1090.7423356024265 | Polciy Loss: 305.6170654296875 | Steps: 6200
+Episode: 32 | Reward: -1299.8391395335002 | Polciy Loss: 303.6833190917969 | Steps: 6400
+Episode: 33 | Reward: -1354.251957515781 | Polciy Loss: 317.9798583984375 | Steps: 6600
+Episode: 34 | Reward: -1197.5762645594773 | Polciy Loss: 321.9259338378906 | Steps: 6800
+Episode: 35 | Reward: -1283.4011082692844 | Polciy Loss: 334.138671875 | Steps: 7000

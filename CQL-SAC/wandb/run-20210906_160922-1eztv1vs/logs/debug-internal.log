@@ -1,0 +1,317 @@
+2021-09-06 16:09:23,343 INFO    MainThread:197431 [internal.py:wandb_internal():63] W&B internal server running at pid: 197431
+2021-09-06 16:09:23,345 INFO    WriterThread:197431 [datastore.py:open_for_write():76] open: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/run-1eztv1vs.wandb
+2021-09-06 16:09:23,345 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: check_version
+2021-09-06 16:09:23,347 DEBUG   SenderThread:197431 [sender.py:send():90] send: header
+2021-09-06 16:09:23,347 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:09:23,347 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: check_version
+2021-09-06 16:09:23,350 DEBUG   Thread-4  :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): pypi.org:443
+2021-09-06 16:09:23,422 DEBUG   Thread-4  :197431 [connectionpool.py:_make_request():461] https://pypi.org:443 "GET /pypi/wandb/json HTTP/1.1" 200 59890
+2021-09-06 16:09:23,452 DEBUG   SenderThread:197431 [sender.py:send():90] send: run
+2021-09-06 16:09:23,458 DEBUG   SenderThread:197431 [cmd.py:execute():719] Popen(['git', 'cat-file', '--batch-check'], cwd=/home/sebastian/Documents/CQL, universal_newlines=False, shell=None, istream=<valid stream>)
+2021-09-06 16:09:23,474 DEBUG   SenderThread:197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:09:23,941 DEBUG   SenderThread:197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:09:23,946 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: run_start
+2021-09-06 16:09:23,952 INFO    SenderThread:197431 [dir_watcher.py:__init__():165] watching files in: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files
+2021-09-06 16:09:23,952 INFO    SenderThread:197431 [sender.py:_start_run_threads():490] run started: 1eztv1vs with start time 1630937362
+2021-09-06 16:09:23,953 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:09:23,953 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:09:23,968 DEBUG   HandlerThread:197431 [cmd.py:execute():719] Popen(['git', 'cat-file', '--batch-check'], cwd=/home/sebastian/Documents/CQL, universal_newlines=False, shell=None, istream=<valid stream>)
+2021-09-06 16:09:23,978 DEBUG   HandlerThread:197431 [cmd.py:execute():719] Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/home/sebastian/Documents/CQL, universal_newlines=False, shell=None, istream=None)
+2021-09-06 16:09:24,077 DEBUG   SenderThread:197431 [sender.py:send():90] send: files
+2021-09-06 16:09:24,078 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-metadata.json with policy now
+2021-09-06 16:09:24,079 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: status
+2021-09-06 16:09:24,079 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:09:24,079 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: status
+2021-09-06 16:09:24,083 DEBUG   SenderThread:197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:09:24,091 DEBUG   Thread-11 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:09:24,351 DEBUG   SenderThread:197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:09:24,352 DEBUG   Thread-11 :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:09:24,360 DEBUG   Thread-11 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-09-06 16:09:24,779 DEBUG   Thread-11 :197431 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/1eztv1vs/wandb-metadata.json?Expires=1631023764&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=my7bY64veqUYyo9SkRVL1aiM8ew7iFQQcrGEGxrTHM2iO2%2FbLmt2L1BDiX613mT9Ud2gGFwawNbsfhOqhM9gzwh3RSRjz8SOkCCNJF%2BrlrCofw4IBGrBduMCSOSZTLviV%2FB6iU4VK760tGAxmguUtUm5GqqUFmqCf14LiBxG%2BXHCasaAPZISMj8Tuc7HwpLXoxOthkIyPwaV9g0cIhkA0I5lqwzzWnxfkNL7VTIHfSmNM4foVBeVFT6x2AUt6hV9RXw2u5Cl55tF71rBDat6Lw0%2BNZFmlRT%2FAc%2FhCKIleBSN70eKpRuNKFbc7gWr8ZxeYnDgRdfxQDITa3wnHagYRw%3D%3D HTTP/1.1" 200 0
+2021-09-06 16:09:24,781 INFO    Thread-11 :197431 [upload_job.py:push():131] Uploaded file /tmp/tmpnwbwfvxzwandb/3rzbtaz0-wandb-metadata.json
+2021-09-06 16:09:24,955 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/requirements.txt
+2021-09-06 16:09:24,956 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:09:24,956 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:09:24,957 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-metadata.json
+2021-09-06 16:09:25,955 DEBUG   Thread-5  :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:09:26,194 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:27,422 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:09:28,836 DEBUG   SenderThread:197431 [sender.py:send():90] send: files
+2021-09-06 16:09:28,837 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file media/graph/g.r.a.p.h._.0_summary_e911534c.graph.json with policy now
+2021-09-06 16:09:28,839 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:09:28,841 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:09:28,844 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:09:28,855 DEBUG   Thread-12 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:09:28,855 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:09:28,955 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:09:28,956 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:09:28,956 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/media/graph/g.r.a.p.h._.0_summary_e911534c.graph.json
+2021-09-06 16:09:28,957 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/media
+2021-09-06 16:09:28,957 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/media/graph
+2021-09-06 16:09:28,984 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:29,165 DEBUG   Thread-12 :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:09:29,171 DEBUG   Thread-12 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-09-06 16:09:29,780 DEBUG   Thread-12 :197431 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/1eztv1vs/media/graph/g.r.a.p.h._.0_summary_e911534c.graph.json?Expires=1631023769&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=oAzJCygWkeHf1BnvO7%2BKf2mvKJ5zDL10NvzjUc%2F3gTXuB0IIH6JMlqgpNiJx%2FKsVoZVu4Onb5q05qidHqHqYXOKLcAfk%2FtLzuiXaGcJmC78zidxzQsE92yDBzQhwaTsrdRrckPf%2Fb%2B%2FQLgfazB3A1RHv%2BoOPWV5%2FuD1zTY2t2%2FX3E0ckKdS5%2B5I4ENBPulsQrCSzVXzHGeIAD7Ndnm%2Bd0i%2FmunThQX%2B6XFWj9Bvodzz5Uc93SxMBBw4RMPJPqev3SikG3gsxIFyjBolAb%2BAGaoE0gJc3H0%2FOcOck0nVwstWD4gwtaOpcKQ9isjHGCMkJm7PG6fp1ClpDwHmpp85qvw%3D%3D HTTP/1.1" 200 0
+2021-09-06 16:09:29,784 INFO    Thread-12 :197431 [upload_job.py:push():131] Uploaded file /tmp/tmpnwbwfvxzwandb/105u4wsu-media/graph/g.r.a.p.h._.0_summary_e911534c.graph.json
+2021-09-06 16:09:31,214 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:31,948 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:09:33,221 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:09:33,224 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:09:33,230 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:09:33,775 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:33,958 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:09:33,958 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:09:36,233 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:36,431 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:09:37,253 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:09:37,256 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:09:37,260 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:09:37,960 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:09:37,961 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:09:39,357 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: status
+2021-09-06 16:09:39,358 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:09:39,358 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: status
+2021-09-06 16:09:39,363 DEBUG   SenderThread:197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:09:39,614 DEBUG   SenderThread:197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:09:39,927 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:40,941 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:09:42,555 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:09:42,558 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:09:42,564 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:09:42,963 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:09:42,963 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:09:43,298 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:45,422 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:09:45,553 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:46,465 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:09:46,468 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:09:46,472 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:09:46,965 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:09:46,965 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:09:49,139 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:49,900 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:09:50,522 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:09:50,525 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:09:50,531 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:09:50,967 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:09:50,967 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:09:51,289 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:53,486 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:54,417 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:09:54,619 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: status
+2021-09-06 16:09:54,619 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:09:54,620 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: status
+2021-09-06 16:09:54,624 DEBUG   SenderThread:197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:09:54,874 DEBUG   SenderThread:197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:09:56,644 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:09:56,654 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:09:56,661 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:09:56,824 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:09:56,971 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:09:56,971 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:09:58,932 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:09:59,587 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:01,787 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:01,798 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:01,805 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:01,842 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:01,974 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:01,974 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:03,462 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:05,963 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:07,981 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:08,189 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:08,295 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:08,305 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:08,311 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:08,979 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:08,979 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:09,879 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: status
+2021-09-06 16:10:09,879 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:09,880 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: status
+2021-09-06 16:10:09,882 DEBUG   SenderThread:197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:10:10,955 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:13,982 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:15,158 DEBUG   SenderThread:197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:10:15,165 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:15,166 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:15,175 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:15,185 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:15,563 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:15,984 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:17,029 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:19,500 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:19,502 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:19,505 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:19,864 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:19,986 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:19,987 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:21,504 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:22,323 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:23,310 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:23,313 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:23,317 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:23,988 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:23,989 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:26,006 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:29,166 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:29,175 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:29,179 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:29,992 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:29,993 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:30,166 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: status
+2021-09-06 16:10:30,167 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:30,167 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: status
+2021-09-06 16:10:30,171 DEBUG   SenderThread:197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:10:34,995 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:35,433 DEBUG   SenderThread:197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:10:35,435 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:35,435 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:35,441 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:35,444 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:35,445 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:35,996 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:36,148 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:38,765 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:38,768 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:38,771 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:38,997 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:38,997 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:39,503 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:42,581 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:42,584 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:42,588 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:42,999 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:43,000 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:43,995 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:47,902 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:47,905 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:47,911 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:48,003 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:48,003 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:48,481 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:48,745 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:50,437 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: status
+2021-09-06 16:10:50,437 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:50,438 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: status
+2021-09-06 16:10:50,442 DEBUG   SenderThread:197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:10:50,691 DEBUG   SenderThread:197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:10:53,003 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:53,807 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:53,818 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:53,825 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:54,006 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:54,007 INFO    Thread-8  :197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:56,504 WARNING MainThread:197431 [internal.py:wandb_internal():117] Internal process interrupt: 1
+2021-09-06 16:10:56,517 DEBUG   SenderThread:197431 [sender.py:send():90] send: history
+2021-09-06 16:10:56,527 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:56,527 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: poll_exit
+2021-09-06 16:10:56,534 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:56,535 DEBUG   SenderThread:197431 [sender.py:send():90] send: exit
+2021-09-06 16:10:56,535 INFO    SenderThread:197431 [sender.py:send_exit():168] handling exit code: 1
+2021-09-06 16:10:56,535 INFO    SenderThread:197431 [sender.py:send_exit():176] send defer
+2021-09-06 16:10:56,535 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:56,536 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: poll_exit
+2021-09-06 16:10:56,536 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: defer
+2021-09-06 16:10:56,537 INFO    HandlerThread:197431 [handler.py:handle_request_defer():69] handle defer: 0
+2021-09-06 16:10:56,537 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:56,538 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: defer
+2021-09-06 16:10:56,538 INFO    SenderThread:197431 [sender.py:send_request_defer():185] handle sender defer: 0
+2021-09-06 16:10:56,538 INFO    SenderThread:197431 [sender.py:send_request_defer():221] send defer: 1
+2021-09-06 16:10:56,539 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: defer
+2021-09-06 16:10:56,539 INFO    HandlerThread:197431 [handler.py:handle_request_defer():69] handle defer: 1
+2021-09-06 16:10:56,621 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:56,622 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: defer
+2021-09-06 16:10:56,622 INFO    SenderThread:197431 [sender.py:send_request_defer():185] handle sender defer: 1
+2021-09-06 16:10:56,622 INFO    SenderThread:197431 [sender.py:send_request_defer():221] send defer: 2
+2021-09-06 16:10:56,623 DEBUG   SenderThread:197431 [sender.py:send():90] send: stats
+2021-09-06 16:10:56,624 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: defer
+2021-09-06 16:10:56,624 INFO    HandlerThread:197431 [handler.py:handle_request_defer():69] handle defer: 2
+2021-09-06 16:10:56,625 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:56,625 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: defer
+2021-09-06 16:10:56,625 INFO    SenderThread:197431 [sender.py:send_request_defer():185] handle sender defer: 2
+2021-09-06 16:10:56,625 INFO    SenderThread:197431 [sender.py:send_request_defer():221] send defer: 3
+2021-09-06 16:10:56,626 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: defer
+2021-09-06 16:10:56,626 INFO    HandlerThread:197431 [handler.py:handle_request_defer():69] handle defer: 3
+2021-09-06 16:10:56,631 DEBUG   SenderThread:197431 [sender.py:send():90] send: summary
+2021-09-06 16:10:56,638 INFO    SenderThread:197431 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-09-06 16:10:56,638 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:56,639 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: defer
+2021-09-06 16:10:56,639 INFO    SenderThread:197431 [sender.py:send_request_defer():185] handle sender defer: 3
+2021-09-06 16:10:56,639 INFO    SenderThread:197431 [sender.py:send_request_defer():221] send defer: 4
+2021-09-06 16:10:56,640 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: defer
+2021-09-06 16:10:56,640 INFO    HandlerThread:197431 [handler.py:handle_request_defer():69] handle defer: 4
+2021-09-06 16:10:56,640 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:56,641 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: defer
+2021-09-06 16:10:56,641 INFO    SenderThread:197431 [sender.py:send_request_defer():185] handle sender defer: 4
+2021-09-06 16:10:56,641 INFO    SenderThread:197431 [dir_watcher.py:finish():279] shutting down directory watcher
+2021-09-06 16:10:57,009 INFO    SenderThread:197431 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:57,010 INFO    SenderThread:197431 [dir_watcher.py:finish():309] scan: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files
+2021-09-06 16:10:57,010 INFO    SenderThread:197431 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/requirements.txt requirements.txt
+2021-09-06 16:10:57,011 INFO    SenderThread:197431 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json wandb-summary.json
+2021-09-06 16:10:57,017 INFO    SenderThread:197431 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log output.log
+2021-09-06 16:10:57,021 DEBUG   Thread-13 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:10:57,022 INFO    SenderThread:197431 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-metadata.json wandb-metadata.json
+2021-09-06 16:10:57,023 INFO    SenderThread:197431 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/config.yaml config.yaml
+2021-09-06 16:10:57,038 DEBUG   Thread-15 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:10:57,044 DEBUG   Thread-14 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:10:57,054 DEBUG   Thread-16 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-09-06 16:10:57,055 INFO    SenderThread:197431 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/media/graph/g.r.a.p.h._.0_summary_e911534c.graph.json media/graph/g.r.a.p.h._.0_summary_e911534c.graph.json
+2021-09-06 16:10:57,056 INFO    SenderThread:197431 [sender.py:send_request_defer():221] send defer: 5
+2021-09-06 16:10:57,058 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: defer
+2021-09-06 16:10:57,059 INFO    HandlerThread:197431 [handler.py:handle_request_defer():69] handle defer: 5
+2021-09-06 16:10:57,059 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:57,059 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: defer
+2021-09-06 16:10:57,060 INFO    SenderThread:197431 [sender.py:send_request_defer():185] handle sender defer: 5
+2021-09-06 16:10:57,060 INFO    SenderThread:197431 [file_pusher.py:finish():169] shutting down file pusher
+2021-09-06 16:10:57,060 INFO    SenderThread:197431 [sender.py:send_request_defer():221] send defer: 6
+2021-09-06 16:10:57,061 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: defer
+2021-09-06 16:10:57,062 INFO    HandlerThread:197431 [handler.py:handle_request_defer():69] handle defer: 6
+2021-09-06 16:10:57,062 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:57,062 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: defer
+2021-09-06 16:10:57,062 INFO    SenderThread:197431 [sender.py:send_request_defer():185] handle sender defer: 6
+2021-09-06 16:10:57,276 DEBUG   Thread-13 :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:10:57,288 DEBUG   Thread-13 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-09-06 16:10:57,289 DEBUG   Thread-14 :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:10:57,291 DEBUG   Thread-16 :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:10:57,294 DEBUG   Thread-15 :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-09-06 16:10:57,323 DEBUG   Thread-14 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-09-06 16:10:57,337 DEBUG   Thread-15 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-09-06 16:10:57,339 DEBUG   Thread-16 :197431 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-09-06 16:10:57,962 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:57,963 DEBUG   Thread-15 :197431 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/1eztv1vs/output.log?Expires=1631023857&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=M2xL%2FCZ9nsvCft%2FR7KIWlCa%2FVNwFKu%2FwvdyrZuxwZ2lZYPXP5Z60ldk48KPxWxnnuZBD8k6XerpcNOsqmFkQNzjabYrN3o%2B%2BQvBmYLc5bGat72l%2BvKBz1gvyugbhRPGoZC%2BbaQIbFOY7YBAiP3HfzD7p3Z0o0ZNOGcSF71OPI7aNZTkkl%2BwgwqFPbO%2BwjTmPWveCgHnsU3FViaN%2BEtgdP0mzFz2Gtdmmn%2FYYYQS6NSGNDtVuZ6QaV8wSNgha0EOitsAwMJrJCfPZseWWEp1NBIKdo%2Bj98FD8HwtRRkdqVtHfMfAkGwsGJBwiS7oW8rrFIvznAcSa85%2BqbDMdy4a68Q%3D%3D HTTP/1.1" 200 0
+2021-09-06 16:10:57,963 DEBUG   Thread-16 :197431 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/1eztv1vs/config.yaml?Expires=1631023857&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=kbOWOejV8SXd47FRETc2KKYG3ByFDfzxB6q6EjKuBs5m7RLeCf5RY0ORgkhoxSapU1MAa%2F7akT3fP7Ooa7FSBz3Tg4Ul7zmLaQQoKfP91ohd5FIVrt0f%2BlAe9%2FcA4Q2VnJOKl8Bdi5h5lrCMq1ccyqKmW3pOKxWjkpHl2NNV7QjJQ1pK857WB33Ps51U7rynqVIVWk7vF6YJOa6drshE4K6o%2FLG7E5lwnLM25rDKBTwcEah0M5b%2F32ELh%2BexWdSJ1%2B2ZPV70STIWJiIcsTHRy6kquYQ9HcFUvsDcVMCxrQrp4D0j%2BBuJT6DaZNlSyO%2FzTfGt77dJLKIP%2FcSqrKiwFA%3D%3D HTTP/1.1" 200 0
+2021-09-06 16:10:57,965 DEBUG   Thread-14 :197431 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/1eztv1vs/wandb-summary.json?Expires=1631023857&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=f0u%2FWhsezS7kTEEHxuEBB68N2FnkzEEFUdIWIiZqCOWiAWVhaEYxNTxdBtPSA0py9ZrMW0iKTySxSOTeHXDLHZXGZuy1Mn0lhF0sH9NlOVgr3cJKOFnUFEjp75EP7lYPqt%2FkWoEqJs4qyZNGd2%2Fs2LwyrV3Dxb3LxZgnwf56y%2FWY2k%2Ft35tFmr761YcTQLgdM2DbQZk0TYsltxVEXbSuegpnGAPqLjfrriAxlNWnDbwnBn6lf%2BIKwZ%2Bur0YY35JiJHbKcrt0PBG5hj8YwO0ggsmDbnNg1J4vg%2B3rlPLveOLMiHN8vDSrE23Zgk85yNPvRZJhlQxrzx0AQNnul8SMPQ%3D%3D HTTP/1.1" 200 0
+2021-09-06 16:10:57,966 DEBUG   Thread-13 :197431 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/1eztv1vs/requirements.txt?Expires=1631023857&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YdVU7HaU0RVW5yOhTna5hli8u40Znb8r03tMaGI75RslEqEmbM4kRp9gghN0VzxqNXKRsBSnDNgKaY4rg1Sh4%2F4HriuX2M5MiGZwG5Ud2qQKy047kn%2FioHxidqf8MJ6n7KROdKJn%2BflbtmARK5XPdcFwRzOX17q1tLZGnd0T1FRqFh%2BXyFaH%2FAFE1Jqz2rgMMEPHxIIHPc9CL1dDEHgmzNF8jDsFsyog1%2F8L5ktojsr3Awm%2F6glA4yeTZJzMPmguMGj5lXzDzLOH6wO1AiSwNOXyUPay93VUP%2BHjqZe9AUDF3aBrLPPo2Pja1MwM3NIRYpLb%2B%2BHlj4GRTWDpynTYoQ%3D%3D HTTP/1.1" 200 0
+2021-09-06 16:10:57,975 INFO    Thread-15 :197431 [upload_job.py:push():131] Uploaded file /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/output.log
+2021-09-06 16:10:57,978 INFO    Thread-16 :197431 [upload_job.py:push():131] Uploaded file /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/config.yaml
+2021-09-06 16:10:57,981 INFO    Thread-13 :197431 [upload_job.py:push():131] Uploaded file /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/requirements.txt
+2021-09-06 16:10:57,983 INFO    Thread-14 :197431 [upload_job.py:push():131] Uploaded file /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/files/wandb-summary.json
+2021-09-06 16:10:58,167 DEBUG   Thread-5  :197431 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/1eztv1vs/file_stream HTTP/1.1" 200 None
+2021-09-06 16:10:58,172 INFO    SenderThread:197431 [sender.py:send_request_defer():221] send defer: 7
+2021-09-06 16:10:58,173 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: defer
+2021-09-06 16:10:58,173 INFO    HandlerThread:197431 [handler.py:handle_request_defer():69] handle defer: 7
+2021-09-06 16:10:58,173 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:58,174 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: defer
+2021-09-06 16:10:58,174 INFO    SenderThread:197431 [sender.py:send_request_defer():185] handle sender defer: 7
+2021-09-06 16:10:58,175 INFO    SenderThread:197431 [sender.py:send_request_defer():221] send defer: 8
+2021-09-06 16:10:58,176 DEBUG   SenderThread:197431 [sender.py:send():90] send: final
+2021-09-06 16:10:58,177 DEBUG   SenderThread:197431 [sender.py:send():90] send: footer
+2021-09-06 16:10:58,178 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: defer
+2021-09-06 16:10:58,178 INFO    HandlerThread:197431 [handler.py:handle_request_defer():69] handle defer: 8
+2021-09-06 16:10:58,179 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:58,179 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: defer
+2021-09-06 16:10:58,179 INFO    SenderThread:197431 [sender.py:send_request_defer():185] handle sender defer: 8
+2021-09-06 16:10:58,541 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: poll_exit
+2021-09-06 16:10:58,542 DEBUG   SenderThread:197431 [sender.py:send():90] send: request
+2021-09-06 16:10:58,542 DEBUG   SenderThread:197431 [sender.py:send_request():99] send_request: poll_exit
+2021-09-06 16:10:58,543 INFO    SenderThread:197431 [file_pusher.py:join():174] waiting for file pusher
+2021-09-06 16:10:58,545 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: get_summary
+2021-09-06 16:10:58,558 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: sampled_history
+2021-09-06 16:10:58,563 DEBUG   HandlerThread:197431 [handler.py:handle_request():55] handle_request: shutdown
+2021-09-06 16:10:58,564 INFO    HandlerThread:197431 [handler.py:finish():271] shutting down handler
+2021-09-06 16:10:59,177 INFO    WriterThread:197431 [datastore.py:close():257] close: /home/sebastian/Documents/CQL/CQL-SAC/wandb/run-20210906_160922-1eztv1vs/run-1eztv1vs.wandb
+2021-09-06 16:10:59,543 INFO    SenderThread:197431 [sender.py:finish():642] shutting down sender
+2021-09-06 16:10:59,543 INFO    SenderThread:197431 [file_pusher.py:finish():169] shutting down file pusher
+2021-09-06 16:10:59,544 INFO    SenderThread:197431 [file_pusher.py:join():174] waiting for file pusher
+2021-09-06 16:10:59,546 INFO    MainThread:197431 [internal.py:handle_exit():138] Internal process exited

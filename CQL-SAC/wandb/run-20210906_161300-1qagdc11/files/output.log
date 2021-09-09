@@ -1,0 +1,19 @@
+/home/sebastian/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py:974: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
+Episode: 1 | Reward: -759.5042110801257 | Polciy Loss: 5.994855880737305 | Steps: 200
+Episode: 2 | Reward: -1328.5348844219116 | Polciy Loss: 6.493051528930664 | Steps: 400
+Episode: 3 | Reward: -1383.4775252034362 | Polciy Loss: 6.88088321685791 | Steps: 600
+Episode: 4 | Reward: -1594.9809759808809 | Polciy Loss: 7.485052108764648 | Steps: 800
+Episode: 5 | Reward: -1096.1779834504373 | Polciy Loss: 8.957791328430176 | Steps: 1000
+Episode: 6 | Reward: -1683.1970846064237 | Polciy Loss: 8.915796279907227 | Steps: 1200
+Episode: 7 | Reward: -1189.9257175398534 | Polciy Loss: 10.561604499816895 | Steps: 1400
+Episode: 8 | Reward: -922.5843288489385 | Polciy Loss: 11.05429744720459 | Steps: 1600
+Episode: 9 | Reward: -985.4471884736986 | Polciy Loss: 11.455909729003906 | Steps: 1800
+Episode: 10 | Reward: -1628.264987333 | Polciy Loss: 12.520155906677246 | Steps: 2000
+Episode: 11 | Reward: -1360.5965769483137 | Polciy Loss: 13.259477615356445 | Steps: 2200
+Episode: 12 | Reward: -1783.2051729735572 | Polciy Loss: 14.908723831176758 | Steps: 2400
+Episode: 13 | Reward: -1434.144185592998 | Polciy Loss: 16.240917205810547 | Steps: 2600
+Episode: 14 | Reward: -1475.129675299685 | Polciy Loss: 17.34018325805664 | Steps: 2800
+Episode: 15 | Reward: -1440.5785765561498 | Polciy Loss: 17.967382431030273 | Steps: 3000
+Episode: 16 | Reward: -1393.0836560199018 | Polciy Loss: 19.321550369262695 | Steps: 3200
+Episode: 17 | Reward: -1780.9578934148246 | Polciy Loss: 19.83587074279785 | Steps: 3400

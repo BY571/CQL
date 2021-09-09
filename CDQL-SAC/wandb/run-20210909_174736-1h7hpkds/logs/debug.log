@@ -1,0 +1,15 @@
+2021-09-09 17:47:36,073 INFO    MainThread:24613 [wandb_setup.py:_flush():70] setting env: {}
+2021-09-09 17:47:36,073 INFO    MainThread:24613 [wandb_setup.py:_flush():70] multiprocessing start_methods=fork,spawn,forkserver
+2021-09-09 17:47:36,073 INFO    MainThread:24613 [wandb_setup.py:_flush():70] setting login settings: {}
+2021-09-09 17:47:36,074 INFO    MainThread:24613 [wandb_init.py:_log_setup():303] Logging user logs to /home/sebastian/Documents/CQL/CDQL-SAC/wandb/run-20210909_174736-1h7hpkds/logs/debug.log
+2021-09-09 17:47:36,074 INFO    MainThread:24613 [wandb_init.py:_log_setup():304] Logging internal logs to /home/sebastian/Documents/CQL/CDQL-SAC/wandb/run-20210909_174736-1h7hpkds/logs/debug-internal.log
+2021-09-09 17:47:37,425 INFO    MainThread:24613 [wandb_run.py:_console_start():1218] atexit reg
+2021-09-09 17:47:37,426 INFO    MainThread:24613 [wandb_run.py:_redirect():1085] redirect: SettingsConsole.REDIRECT
+2021-09-09 17:47:37,426 INFO    MainThread:24613 [wandb_run.py:_redirect():1088] Redirecting console.
+2021-09-09 17:47:37,426 INFO    MainThread:24613 [redirect.py:install():204] install start
+2021-09-09 17:47:37,427 INFO    MainThread:24613 [redirect.py:install():219] install stop
+2021-09-09 17:47:37,427 INFO    MainThread:24613 [redirect.py:install():204] install start
+2021-09-09 17:47:37,428 INFO    MainThread:24613 [redirect.py:install():219] install stop
+2021-09-09 17:47:37,428 INFO    MainThread:24613 [wandb_run.py:_redirect():1132] Redirects installed.
+2021-09-09 17:47:40,413 INFO    MainThread:24613 [wandb_watch.py:watch():35] Watching
+2021-09-09 17:47:41,400 INFO    MainThread:24613 [wandb_run.py:finish():912] finishing run sebastian-dittert/CQL/1h7hpkds

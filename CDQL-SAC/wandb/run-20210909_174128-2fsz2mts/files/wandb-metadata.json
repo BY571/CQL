@@ -1,0 +1,29 @@
+{
+    "os": "Linux-5.4.0-81-generic-x86_64-with-debian-bullseye-sid",
+    "python": "3.7.4",
+    "heartbeatAt": "2021-09-09T15:41:29.751751",
+    "startedAt": "2021-09-09T15:41:28.381619",
+    "docker": null,
+    "gpu": "GeForce MX150",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "--run_name",
+        "CDQL_test",
+        "--episodes",
+        "50"
+    ],
+    "state": "running",
+    "codePath": "CDQL-SAC/train.py",
+    "program": "train.py",
+    "git": {
+        "remote": "https://github.com/BY571/CQL.git",
+        "commit": "ea14bf00b28e6d8053db61a1fc3c4445ba28e19b"
+    },
+    "email": "sebastian.dittert@gmx.de",
+    "root": "/home/sebastian/Documents/CQL",
+    "host": "sebastian-VLT-WX0",
+    "username": "sebastian",
+    "executable": "/home/sebastian/anaconda3/bin/python"
+}

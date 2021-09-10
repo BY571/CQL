@@ -57,7 +57,7 @@ class CQLSAC(nn.Module):
         # Actor Network 
 
         self.actor_local = Actor(state_size, action_size, hidden_size).to(device)
-        self.actor_optimizer = optim.Adam(self.actor_local.parameters(), lr=3e-4)     
+        self.actor_optimizer = optim.Adam(self.actor_local.parameters(), lr=learning_rate)     
         
         # Critic Network (w/ Target Network)
 
@@ -162,7 +162,6 @@ class CQLSAC(nn.Module):
         critic2_loss = 0.5 * F.mse_loss(q2.cpu(), Q_targets)
         
         # CQL addon
-
         random_actions = torch.FloatTensor(q1.shape[0] * 10, actions.shape[-1]).uniform_(-1, 1).to(self.device)
         num_repeat = int (random_actions.shape[0] / states.shape[0])
         temp_states = states.unsqueeze(1).repeat(1, num_repeat, 1).view(states.shape[0] * num_repeat, states.shape[1])
@@ -174,15 +173,13 @@ class CQLSAC(nn.Module):
         random_values1 = self._compute_random_values(temp_states, random_actions, self.critic1).reshape(states.shape[0], num_repeat, 1)
         random_values2 = self._compute_random_values(temp_states, random_actions, self.critic2).reshape(states.shape[0], num_repeat, 1)
         
-        q1_current_action = self.critic1(temp_states, current_pi_values1).reshape(states.shape[0], num_repeat, 1)
-        q2_current_action = self.critic2(temp_states, current_pi_values2).reshape(states.shape[0], num_repeat, 1)
+        current_pi_values1 = current_pi_values1.reshape(states.shape[0], num_repeat, 1)
+        current_pi_values2 = current_pi_values2.reshape(states.shape[0], num_repeat, 1)
+        next_pi_values1 = next_pi_values1.reshape(states.shape[0], num_repeat, 1)
+        next_pi_values2 = next_pi_values2.reshape(states.shape[0], num_repeat, 1)
         
-        q1_next_action = self.critic1(temp_next_states, next_pi_values1).reshape(states.shape[0], num_repeat, 1)
-        q2_next_action = self.critic2(temp_next_states, next_pi_values2).reshape(states.shape[0], num_repeat, 1)
-        
-        
-        cat_q1 = torch.cat([random_values1, q1_current_action, q1_next_action], 1)
-        cat_q2 = torch.cat([random_values2, q2_current_action, q2_next_action], 1)
+        cat_q1 = torch.cat([random_values1, current_pi_values1, next_pi_values1], 1)
+        cat_q2 = torch.cat([random_values2, current_pi_values2, next_pi_values2], 1)
         
         assert cat_q1.shape == (states.shape[0], 3 * num_repeat, 1), f"cat_q1 instead has shape: {cat_q1.shape}"
         assert cat_q2.shape == (states.shape[0], 3 * num_repeat, 1), f"cat_q2 instead has shape: {cat_q2.shape}"

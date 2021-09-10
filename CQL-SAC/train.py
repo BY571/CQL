@@ -22,6 +22,7 @@ def get_config():
     parser.add_argument("--seed", type=int, default=1, help="Seed, default: 1")
     parser.add_argument("--log_video", type=int, default=0, help="Log agent behaviour to wanbd when set to 1, default: 0")
     parser.add_argument("--save_every", type=int, default=100, help="Saves the network every x epochs, default: 25")
+    parser.add_argument("--batch_size", type=int, default=256, help="Batch size, default: 256")
     
     args = parser.parse_args()
     return args
@@ -49,7 +50,7 @@ def train(config):
 
         wandb.watch(agent, log="gradients", log_freq=10)
 
-        buffer = ReplayBuffer(buffer_size=config.buffer_size, batch_size=256, device=device)
+        buffer = ReplayBuffer(buffer_size=config.buffer_size, batch_size=config.batch_size, device=device)
         
         collect_random(env=env, dataset=buffer, num_samples=10000)
         

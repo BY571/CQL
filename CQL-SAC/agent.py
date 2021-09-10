@@ -8,9 +8,6 @@ import numpy as np
 import math
 import copy
 
-# inspired by: https://github.com/takuseno/d3rlpy/blob/fd273504c49580ecb11930a330504fe78aee6fd6/d3rlpy/algos/torch/cql_impl.py#L175
-# and https://github.com/polixir/OfflineRL/blob/master/offlinerl/algo/modelfree/cql.py
-
 
 class CQLSAC(nn.Module):
     """Interacts with and learns from the environment."""

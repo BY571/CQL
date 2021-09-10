@@ -8,9 +8,6 @@ import numpy as np
 import math
 import copy
 
-# inspired by: https://github.com/takuseno/d3rlpy/blob/fd273504c49580ecb11930a330504fe78aee6fd6/d3rlpy/algos/torch/cql_impl.py#L175
-# and https://github.com/polixir/OfflineRL/blob/master/offlinerl/algo/modelfree/cql.py
-
 
 class CQLSAC(nn.Module):
     """Interacts with and learns from the environment."""
@@ -187,16 +184,14 @@ class CQLSAC(nn.Module):
         
         random_values1 = self._compute_random_values(temp_states, random_actions, self.critic1).reshape(states.shape[0], num_repeat, 1)
         random_values2 = self._compute_random_values(temp_states, random_actions, self.critic2).reshape(states.shape[0], num_repeat, 1)
+
+        current_pi_values1 = current_pi_values1.reshape(states.shape[0], num_repeat, 1)
+        current_pi_values2 = current_pi_values2.reshape(states.shape[0], num_repeat, 1)
+        next_pi_values1 = next_pi_values1.reshape(states.shape[0], num_repeat, 1)
+        next_pi_values2 = next_pi_values2.reshape(states.shape[0], num_repeat, 1)      
         
-        q1_current_action = self.critic1.get_qvalues(temp_states, current_pi_values1).reshape(states.shape[0], num_repeat, 1)
-        q2_current_action = self.critic2.get_qvalues(temp_states, current_pi_values2).reshape(states.shape[0], num_repeat, 1)
-        
-        q1_next_action = self.critic1.get_qvalues(temp_next_states, next_pi_values1).reshape(states.shape[0], num_repeat, 1)
-        q2_next_action = self.critic2.get_qvalues(temp_next_states, next_pi_values2).reshape(states.shape[0], num_repeat, 1)
-        
-        
-        cat_q1 = torch.cat([random_values1, q1_current_action, q1_next_action], 1)
-        cat_q2 = torch.cat([random_values2, q2_current_action, q2_next_action], 1)
+        cat_q1 = torch.cat([random_values1, current_pi_values1, next_pi_values1], 1)
+        cat_q2 = torch.cat([random_values2, current_pi_values2, next_pi_values2], 1)
         
         assert cat_q1.shape == (states.shape[0], 3 * num_repeat, 1), f"cat_q1 instead has shape: {cat_q1.shape}"
         assert cat_q2.shape == (states.shape[0], 3 * num_repeat, 1), f"cat_q2 instead has shape: {cat_q2.shape}"

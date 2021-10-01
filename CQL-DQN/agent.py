@@ -50,8 +50,6 @@ class CQLAgent():
         Q_expected = Q_a_s.gather(1, actions)
         
         cql1_loss = torch.logsumexp(Q_a_s, dim=1).mean() - Q_a_s.mean()
-        #cql2_loss = torch.logsumexp(Q_expected).mean() - Q_expected.mean()
-
 
         bellmann_error = F.mse_loss(Q_expected, Q_targets)
         

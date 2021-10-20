@@ -1,9 +1,0 @@
-/home/sebastian/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py:974: UserWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
-  warnings.warn("Using a non-full backward hook when the forward contains multiple autograd Nodes "
-Episode: 1 | Reward: 16.0 | Polciy Loss: -0.9717387557029724 | Steps: 16
-Episode: 2 | Reward: 62.0 | Polciy Loss: -1.8989067077636719 | Steps: 78
-Episode: 3 | Reward: 20.0 | Polciy Loss: -1.99617338180542 | Steps: 98
-Episode: 4 | Reward: 13.0 | Polciy Loss: -2.0732927322387695 | Steps: 111
-Episode: 5 | Reward: 25.0 | Polciy Loss: -2.1844868659973145 | Steps: 136
-Episode: 6 | Reward: 13.0 | Polciy Loss: -2.2539944648742676 | Steps: 149
-Episode: 7 | Reward: 13.0 | Polciy Loss: -2.3066680431365967 | Steps: 162

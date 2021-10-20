@@ -1,0 +1,34 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.10.11
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.7.4
+batch_size:
+  desc: null
+  value: 256
+buffer_size:
+  desc: null
+  value: 100000
+env:
+  desc: null
+  value: CartPole-v0
+episodes:
+  desc: null
+  value: 200
+log_video:
+  desc: null
+  value: 0
+run_name:
+  desc: null
+  value: CQL-SAC-discrete
+save_every:
+  desc: null
+  value: 100
+seed:
+  desc: null
+  value: 1

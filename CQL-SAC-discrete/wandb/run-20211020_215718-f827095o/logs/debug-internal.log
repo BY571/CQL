@@ -1,0 +1,560 @@
+2021-10-20 21:57:19,574 INFO    MainThread:396695 [internal.py:wandb_internal():63] W&B internal server running at pid: 396695
+2021-10-20 21:57:19,576 INFO    WriterThread:396695 [datastore.py:open_for_write():76] open: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/run-f827095o.wandb
+2021-10-20 21:57:19,577 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: check_version
+2021-10-20 21:57:19,578 DEBUG   SenderThread:396695 [sender.py:send():90] send: header
+2021-10-20 21:57:19,578 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:57:19,579 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: check_version
+2021-10-20 21:57:19,582 DEBUG   Thread-4  :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): pypi.org:443
+2021-10-20 21:57:19,650 DEBUG   Thread-4  :396695 [connectionpool.py:_make_request():461] https://pypi.org:443 "GET /pypi/wandb/json HTTP/1.1" 200 61086
+2021-10-20 21:57:19,677 DEBUG   SenderThread:396695 [sender.py:send():90] send: run
+2021-10-20 21:57:19,685 DEBUG   SenderThread:396695 [cmd.py:execute():719] Popen(['git', 'cat-file', '--batch-check'], cwd=/home/sebastian/Documents/CQL, universal_newlines=False, shell=None, istream=<valid stream>)
+2021-10-20 21:57:19,705 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:57:19,949 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:57:19,957 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: run_start
+2021-10-20 21:57:19,960 INFO    SenderThread:396695 [dir_watcher.py:__init__():165] watching files in: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files
+2021-10-20 21:57:19,960 INFO    SenderThread:396695 [sender.py:_start_run_threads():490] run started: f827095o with start time 1634759838
+2021-10-20 21:57:19,960 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:57:19,961 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:57:19,977 DEBUG   HandlerThread:396695 [cmd.py:execute():719] Popen(['git', 'cat-file', '--batch-check'], cwd=/home/sebastian/Documents/CQL, universal_newlines=False, shell=None, istream=<valid stream>)
+2021-10-20 21:57:19,985 DEBUG   HandlerThread:396695 [cmd.py:execute():719] Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/home/sebastian/Documents/CQL, universal_newlines=False, shell=None, istream=None)
+2021-10-20 21:57:20,073 DEBUG   SenderThread:396695 [sender.py:send():90] send: files
+2021-10-20 21:57:20,073 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-metadata.json with policy now
+2021-10-20 21:57:20,074 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 21:57:20,075 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:57:20,075 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 21:57:20,080 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:57:20,089 DEBUG   Thread-11 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:57:20,358 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:57:20,359 DEBUG   Thread-11 :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:57:20,371 DEBUG   Thread-11 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-10-20 21:57:20,965 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:57:20,966 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:57:20,967 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-metadata.json
+2021-10-20 21:57:20,967 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/requirements.txt
+2021-10-20 21:57:20,979 DEBUG   Thread-11 :396695 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/f827095o/wandb-metadata.json?Expires=1634846240&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=C1YJdQbK6z6ENi%2FeFicBr%2F2Ywg%2FEjYaqKTySnAoWhKKTwDVw%2B5%2BRj8tJHOYiTFJ3vl4DZCKoFEUUO152KOoLgrx1twij%2BaqJJvvMKeDOYFMCqGwCaCjxoUXgfLhA7ZBfRF5C2HjDRqXJP%2BkbJEQYujcupkStW1nYJj4hnfkdbGZNgwpabLgRhc3ZfyQLCVW%2BAnr8L6BoY2uXe0IHvj3gffTYOYPixElkT4I60N1RtNktvg521dv17lpWJ1qIR1y8sorM2qblQN%2BPAJFtjOiC%2BDSCGp32OxZS791Z4uExbGAlromhQxcIzhmbHUpzIQ3paPJXFiWHoQntsjc5OsHPfQ%3D%3D HTTP/1.1" 200 0
+2021-10-20 21:57:20,982 INFO    Thread-11 :396695 [upload_job.py:push():131] Uploaded file /tmp/tmp_wslmvi3wandb/28pmbjb4-wandb-metadata.json
+2021-10-20 21:57:21,963 DEBUG   Thread-5  :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:57:22,202 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:57:23,523 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:57:25,891 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:57:27,411 DEBUG   SenderThread:396695 [sender.py:send():90] send: files
+2021-10-20 21:57:27,412 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file media/graph/g.r.a.p.h._.0_summary_62907c12.graph.json with policy now
+2021-10-20 21:57:27,413 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:57:27,415 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:57:27,423 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:57:27,423 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:57:27,426 DEBUG   Thread-12 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:57:27,745 DEBUG   Thread-12 :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:57:27,775 DEBUG   Thread-12 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-10-20 21:57:27,968 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:57:27,969 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:57:27,969 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/media/graph/g.r.a.p.h._.0_summary_62907c12.graph.json
+2021-10-20 21:57:27,969 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/media
+2021-10-20 21:57:27,969 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_created():213] file/dir created: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/media/graph
+2021-10-20 21:57:28,128 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:57:28,174 DEBUG   Thread-12 :396695 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/f827095o/media/graph/g.r.a.p.h._.0_summary_62907c12.graph.json?Expires=1634846247&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=VCmJIBeKPFTZTzvy7sPo8SDNYajOdMFz084E%2FVTq%2FP8vs88Kt4XriBKINnmR73vDIXxMZIzG7uQkC7gQvTNJN2LRIolSAdOx%2Bw%2FMFnZiSwhZOHbN%2BVgr0kXT2d50GC%2B9DsPG%2BuNM4kRJA35jzbmTC80OxTSJwuxXnIQ9MHEy%2F0wLTqp4h1DvpWEBCWyBPwxOLk0PcyexlnuPe0ykLqxfl9X%2B9tlMd1wtIOy%2Fa5vrp5b6tW3UuGF%2Fffls4We9DfEeQiF185A4daphHJvqmP0r6e8M8LS5rYBw7B3uKkPqumS1Hfh7PRwNtUQNG6nmFsd%2BEkqTkKwoAuOyxFGx1kzgzA%3D%3D HTTP/1.1" 200 0
+2021-10-20 21:57:28,188 INFO    Thread-12 :396695 [upload_job.py:push():131] Uploaded file /tmp/tmp_wslmvi3wandb/3gjc61dl-media/graph/g.r.a.p.h._.0_summary_62907c12.graph.json
+2021-10-20 21:57:28,549 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:57:28,557 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:57:28,563 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:57:28,664 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:57:28,976 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:57:28,981 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:57:31,437 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:57:32,864 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:57:33,094 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:57:35,412 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 21:57:35,423 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:57:35,423 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 21:57:35,442 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:57:36,054 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:57:37,598 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:57:37,893 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:57:42,476 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:57:42,817 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:57:48,739 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:57:49,065 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:57:51,203 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 21:57:51,261 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:57:51,261 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 21:57:51,353 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:57:51,900 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:57:53,957 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:57:54,172 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:57:57,987 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:57:58,001 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:57:58,012 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:57:58,477 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:57:58,592 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:57:58,701 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:57:58,701 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:57:59,060 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:57:59,076 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:57:59,096 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:57:59,737 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:57:59,748 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:01,718 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:58:01,742 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:01,760 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:01,765 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:01,773 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:02,749 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:02,926 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:02,933 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:02,939 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:03,307 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:03,595 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:03,609 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:03,617 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:03,778 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:03,786 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:04,012 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:58:06,143 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:06,156 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:06,161 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:06,615 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:58:06,784 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:06,785 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:07,048 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 21:58:07,056 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:58:07,056 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 21:58:07,073 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:58:07,395 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:58:07,973 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:10,590 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:10,609 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:10,623 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:10,767 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:58:10,802 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:10,803 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:11,324 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:11,344 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:11,351 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:11,814 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:11,820 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:12,613 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:13,213 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:58:13,496 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:13,513 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:13,526 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:13,814 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:13,817 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:14,020 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:14,052 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:14,064 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:14,823 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:14,827 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:15,913 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:15,935 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:15,943 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:16,830 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:16,834 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:16,893 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:58:17,260 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:18,324 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:18,337 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:18,359 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:18,843 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:18,847 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:19,000 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:19,010 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:19,019 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:19,857 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:19,870 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:20,387 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:20,399 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:20,409 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:20,866 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:20,871 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:21,879 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:22,501 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 21:58:22,507 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:58:22,507 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 21:58:22,525 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:58:22,833 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:58:25,272 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:25,297 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:25,318 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:25,889 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:25,895 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:26,575 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:27,453 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:27,461 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:27,467 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:27,651 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:58:27,898 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:27,903 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:28,122 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:28,130 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:28,137 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:28,899 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:28,903 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:31,161 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:33,853 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:33,869 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:33,879 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:33,920 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:33,920 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:34,862 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:34,874 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:34,880 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:34,921 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:34,922 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:35,835 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:35,923 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:35,929 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:35,936 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:35,938 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:35,938 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:36,676 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:36,685 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:36,702 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:36,951 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:36,954 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:37,504 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:37,537 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:37,550 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:37,802 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:58:37,912 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 21:58:37,912 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:58:37,912 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 21:58:37,926 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:58:37,951 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:37,951 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:38,418 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:58:40,482 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:41,045 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:41,054 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:41,060 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:41,786 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:41,802 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:41,808 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:41,965 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:41,966 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:42,669 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:42,681 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:42,692 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:42,970 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:42,978 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:44,434 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:44,443 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:44,449 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:44,975 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:44,980 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:45,082 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:47,956 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:47,965 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:47,976 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:48,009 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:48,009 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:49,158 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:58:49,758 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:51,178 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:51,192 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:51,213 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:52,054 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:52,058 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:53,478 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 21:58:53,487 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:58:53,487 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 21:58:53,504 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:58:53,898 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:58:54,486 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:58,823 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:58:58,848 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:58:58,867 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:58:59,098 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:58:59,103 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:58:59,134 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:58:59,509 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:59:03,814 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:04,948 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:04,957 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:04,961 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:05,141 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:05,142 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:05,578 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:05,586 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:05,595 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:06,145 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:06,148 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:06,157 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:06,162 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:06,170 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:06,861 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:06,870 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:06,878 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:07,146 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:07,147 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:07,592 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:07,601 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:07,607 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:08,044 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:08,050 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:08,055 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:08,151 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:08,151 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:08,380 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:08,958 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 21:59:08,959 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:59:08,959 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 21:59:08,965 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:59:09,209 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:59:09,521 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:09,546 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:09,570 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:10,076 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:10,081 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:10,085 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:10,150 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:10,151 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:10,644 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:59:10,679 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:10,683 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:10,689 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:11,153 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:11,154 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:11,603 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:11,613 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:11,619 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:12,157 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:12,159 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:12,281 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:12,294 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:12,300 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:13,043 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:13,089 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:13,097 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:13,102 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:13,156 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:13,156 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:13,773 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:13,779 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:13,785 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:14,157 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:14,158 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:14,865 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:14,876 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:14,883 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:15,158 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:15,158 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:16,506 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:16,513 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:16,518 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:17,161 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:17,162 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:17,905 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:17,914 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:17,918 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:18,163 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:18,163 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:18,621 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:20,786 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:20,791 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:20,804 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:21,164 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:21,164 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:21,486 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:21,488 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:21,492 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:22,125 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:22,128 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:22,132 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:22,163 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:22,164 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:22,325 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:59:22,905 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:22,910 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:22,914 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:23,146 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:23,165 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:23,166 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:23,983 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:23,987 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:23,992 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:24,165 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:24,165 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:24,215 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 21:59:24,216 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:59:24,216 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 21:59:24,225 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:59:24,777 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:59:24,885 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:24,894 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:24,899 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:25,166 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:25,166 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:27,075 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:27,088 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:27,095 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:27,167 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:27,168 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:27,642 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:28,040 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:28,043 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:28,046 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:28,168 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:28,168 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:30,906 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:30,911 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:30,923 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:31,170 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:31,171 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:32,055 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:32,066 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:32,072 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:32,148 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:59:32,171 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:32,171 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:32,185 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:33,672 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:33,677 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:33,681 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:34,174 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:34,174 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:36,719 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:38,674 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:38,677 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:38,681 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:39,177 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:39,177 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:39,784 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 21:59:39,784 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:59:39,784 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 21:59:39,791 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:59:40,033 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:59:41,208 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:42,287 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:59:44,580 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:44,584 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:44,591 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:45,180 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:45,180 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:45,688 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:50,181 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:52,179 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:52,187 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:52,192 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:52,201 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:52,201 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:53,039 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 21:59:54,674 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 21:59:55,040 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 21:59:55,040 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 21:59:55,040 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 21:59:55,044 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 21:59:55,291 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 21:59:57,779 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 21:59:57,788 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 21:59:57,794 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 21:59:58,202 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 21:59:58,202 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 21:59:59,159 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 22:00:03,573 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 22:00:03,579 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 22:00:03,587 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 22:00:03,665 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 22:00:04,206 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 22:00:04,208 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 22:00:04,447 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 22:00:08,173 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 22:00:10,297 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: status
+2021-10-20 22:00:10,298 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 22:00:10,298 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: status
+2021-10-20 22:00:10,305 DEBUG   SenderThread:396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 22:00:10,554 DEBUG   SenderThread:396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 22:00:11,599 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 22:00:11,609 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 22:00:11,617 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 22:00:12,212 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 22:00:12,212 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 22:00:12,690 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 22:00:17,178 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 22:00:17,924 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 22:00:19,305 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 22:00:19,314 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 22:00:19,319 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 22:00:20,217 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 22:00:20,218 INFO    Thread-8  :396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 22:00:21,714 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 22:00:22,342 WARNING MainThread:396695 [internal.py:wandb_internal():117] Internal process interrupt: 1
+2021-10-20 22:00:22,351 DEBUG   SenderThread:396695 [sender.py:send():90] send: history
+2021-10-20 22:00:22,354 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 22:00:22,357 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: poll_exit
+2021-10-20 22:00:22,358 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 22:00:22,358 DEBUG   SenderThread:396695 [sender.py:send():90] send: exit
+2021-10-20 22:00:22,358 INFO    SenderThread:396695 [sender.py:send_exit():168] handling exit code: 1
+2021-10-20 22:00:22,358 INFO    SenderThread:396695 [sender.py:send_exit():176] send defer
+2021-10-20 22:00:22,358 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 22:00:22,359 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: defer
+2021-10-20 22:00:22,359 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: poll_exit
+2021-10-20 22:00:22,359 INFO    HandlerThread:396695 [handler.py:handle_request_defer():69] handle defer: 0
+2021-10-20 22:00:22,360 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 22:00:22,360 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: defer
+2021-10-20 22:00:22,360 INFO    SenderThread:396695 [sender.py:send_request_defer():185] handle sender defer: 0
+2021-10-20 22:00:22,360 INFO    SenderThread:396695 [sender.py:send_request_defer():221] send defer: 1
+2021-10-20 22:00:22,360 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: defer
+2021-10-20 22:00:22,360 INFO    HandlerThread:396695 [handler.py:handle_request_defer():69] handle defer: 1
+2021-10-20 22:00:22,434 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 22:00:22,434 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: defer
+2021-10-20 22:00:22,435 INFO    SenderThread:396695 [sender.py:send_request_defer():185] handle sender defer: 1
+2021-10-20 22:00:22,435 INFO    SenderThread:396695 [sender.py:send_request_defer():221] send defer: 2
+2021-10-20 22:00:22,435 DEBUG   SenderThread:396695 [sender.py:send():90] send: stats
+2021-10-20 22:00:22,436 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: defer
+2021-10-20 22:00:22,436 INFO    HandlerThread:396695 [handler.py:handle_request_defer():69] handle defer: 2
+2021-10-20 22:00:22,436 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 22:00:22,436 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: defer
+2021-10-20 22:00:22,436 INFO    SenderThread:396695 [sender.py:send_request_defer():185] handle sender defer: 2
+2021-10-20 22:00:22,436 INFO    SenderThread:396695 [sender.py:send_request_defer():221] send defer: 3
+2021-10-20 22:00:22,437 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: defer
+2021-10-20 22:00:22,437 INFO    HandlerThread:396695 [handler.py:handle_request_defer():69] handle defer: 3
+2021-10-20 22:00:22,440 DEBUG   SenderThread:396695 [sender.py:send():90] send: summary
+2021-10-20 22:00:22,444 INFO    SenderThread:396695 [sender.py:_save_file():568] saving file wandb-summary.json with policy end
+2021-10-20 22:00:22,444 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 22:00:22,444 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: defer
+2021-10-20 22:00:22,444 INFO    SenderThread:396695 [sender.py:send_request_defer():185] handle sender defer: 3
+2021-10-20 22:00:22,444 INFO    SenderThread:396695 [sender.py:send_request_defer():221] send defer: 4
+2021-10-20 22:00:22,445 DEBUG   HandlerThread:396695 [handler.py:handle_request():55] handle_request: defer
+2021-10-20 22:00:22,445 INFO    HandlerThread:396695 [handler.py:handle_request_defer():69] handle defer: 4
+2021-10-20 22:00:22,445 DEBUG   SenderThread:396695 [sender.py:send():90] send: request
+2021-10-20 22:00:22,445 DEBUG   SenderThread:396695 [sender.py:send_request():99] send_request: defer
+2021-10-20 22:00:22,445 INFO    SenderThread:396695 [sender.py:send_request_defer():185] handle sender defer: 4
+2021-10-20 22:00:22,445 INFO    SenderThread:396695 [dir_watcher.py:finish():279] shutting down directory watcher
+2021-10-20 22:00:22,596 WARNING MainThread:396695 [internal.py:wandb_internal():117] Internal process interrupt: 2
+2021-10-20 22:00:22,596 ERROR   MainThread:396695 [internal.py:wandb_internal():120] Internal process interrupted.
+2021-10-20 22:00:23,221 INFO    SenderThread:396695 [dir_watcher.py:_on_file_modified():226] file/dir modified: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 22:00:23,222 INFO    SenderThread:396695 [dir_watcher.py:finish():309] scan: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files
+2021-10-20 22:00:23,223 INFO    SenderThread:396695 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/requirements.txt requirements.txt
+2021-10-20 22:00:23,223 INFO    SenderThread:396695 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json wandb-summary.json
+2021-10-20 22:00:23,224 INFO    SenderThread:396695 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log output.log
+2021-10-20 22:00:23,241 INFO    SenderThread:396695 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-metadata.json wandb-metadata.json
+2021-10-20 22:00:23,241 INFO    SenderThread:396695 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/config.yaml config.yaml
+2021-10-20 22:00:23,242 DEBUG   Thread-13 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 22:00:23,245 DEBUG   Thread-14 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 22:00:23,257 DEBUG   Thread-15 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 22:00:23,259 INFO    SenderThread:396695 [dir_watcher.py:finish():315] scan save: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/media/graph/g.r.a.p.h._.0_summary_62907c12.graph.json media/graph/g.r.a.p.h._.0_summary_62907c12.graph.json
+2021-10-20 22:00:23,259 INFO    SenderThread:396695 [sender.py:send_request_defer():221] send defer: 5
+2021-10-20 22:00:23,260 INFO    SenderThread:396695 [sender.py:finish():642] shutting down sender
+2021-10-20 22:00:23,260 INFO    SenderThread:396695 [file_pusher.py:finish():169] shutting down file pusher
+2021-10-20 22:00:23,260 INFO    SenderThread:396695 [file_pusher.py:join():174] waiting for file pusher
+2021-10-20 22:00:23,269 DEBUG   Thread-16 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): api.wandb.ai:443
+2021-10-20 22:00:23,444 INFO    WriterThread:396695 [datastore.py:close():257] close: /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/run-f827095o.wandb
+2021-10-20 22:00:23,496 DEBUG   Thread-13 :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 22:00:23,503 DEBUG   Thread-14 :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 22:00:23,515 DEBUG   Thread-13 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-10-20 22:00:23,516 DEBUG   Thread-16 :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 22:00:23,516 DEBUG   Thread-15 :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2021-10-20 22:00:23,527 DEBUG   Thread-14 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-10-20 22:00:23,542 DEBUG   Thread-16 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-10-20 22:00:23,553 DEBUG   Thread-15 :396695 [connectionpool.py:_new_conn():975] Starting new HTTPS connection (1): storage.googleapis.com:443
+2021-10-20 22:00:24,066 DEBUG   Thread-15 :396695 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/f827095o/output.log?Expires=1634846423&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=rEnmnw9FJKwWI24UEfg%2FrPfrUb15uRTtA0Fe9sX6Wm0n%2BCV7xmuuF1Wocli%2BU9TG9Fq5bRfWdzbeHfakfE80T9VE2oL6vsIXDaQBRY50FRS%2BNbBZgSgbmk6LbMA4ORIfkFKJAgkJWPVQocSSMPcLtAyDVs3v7KrF9HpiMh0RZD2ywZDTDiGIDo5W77NueCVz6G8yq3JhzrFHLH9sAgfobTvcBSx6FeHl0BJVsahl3fJkWSf2gTzwAc%2F%2BYvcGBoFTZJ74h9RX1qHKInxBdkwFPgun0irYzbHWQIHlSEqRB0HfRyNxTsrQTDQEtVIfVBexArVC0N79PHM8IEoM6YJOfg%3D%3D HTTP/1.1" 200 0
+2021-10-20 22:00:24,067 DEBUG   Thread-13 :396695 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/f827095o/requirements.txt?Expires=1634846423&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=Hm7ue%2F5u4XjF6erXlHW5k23KK9QF7c006YBIaDAVTuZ6BMLap%2BmgBCubuTZr3LlAdUOA96b%2BnrQYyNnkIXjA2maDAe0sgJS2f%2FNizOk3MIJKIebe%2FuN%2BZ%2BU5eYIVLN5RZRjKClGNs3KF7YLYShr2kjTL%2FSY0OBcsbnGN0Q79lC9F3cKzyyfWctG8VeUxI3sn8m3%2FiFdVQzrcTvvK%2FiMB3GbXsna8s%2FrdibiNjsjzrttRmewIVDg7RE1tlUSZWFCdVqU0%2BwJtSsj81jOncxJ%2BLvsqUJGuUxk%2FRojA5ktLtpQwZxVHtxrDday8%2BQii1QNfcvr2dKEJcPqW%2B0AoRMMIPg%3D%3D HTTP/1.1" 200 0
+2021-10-20 22:00:24,068 DEBUG   Thread-16 :396695 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/f827095o/config.yaml?Expires=1634846423&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=JfkJC0ZgzFgk9QeZbRzWIJObUrea4dYy8kZUqr76A3nRbqRuYDZaZhFIOpQKFJsAeTT1Svv%2BGqOwwZAlF%2BR8kTn7wCZHKa0GYD3pkAYbwKJuxHZPwZLg2FiLxSKU8PgfuTxrHVJD90JAm8U1PhxjtJ0Viq%2FFuR7PP4yCR%2Ft%2BGMnv1xibOkBCAZS6ZUJG4B8zJbXbjVzyn0OPUPZZsQPTJACQQu8J%2FLykhwfIUVjmgZy11cTg1x34qEzSHutjK47iL70HXKn%2Bk151SAZzSBNFFVQs6dFD3NegwtfM7dr6bGzPZCJ2UAsiUgtougZ3xsIGJrKWXnqTn2pMSpPpm7MPyA%3D%3D HTTP/1.1" 200 0
+2021-10-20 22:00:24,072 INFO    Thread-15 :396695 [upload_job.py:push():131] Uploaded file /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/output.log
+2021-10-20 22:00:24,076 INFO    Thread-13 :396695 [upload_job.py:push():131] Uploaded file /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/requirements.txt
+2021-10-20 22:00:24,081 INFO    Thread-16 :396695 [upload_job.py:push():131] Uploaded file /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/config.yaml
+2021-10-20 22:00:24,093 DEBUG   Thread-14 :396695 [connectionpool.py:_make_request():461] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sebastian-dittert/CQL/f827095o/wandb-summary.json?Expires=1634846423&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WP9rQ3BjlefepSvlxSUfygO3Muhn9BEQRSr6lg9YmUhCLBlwT4uyBeK0ijvSI0kDYQipZh%2BX1Oc2TXv58pYsyMNhBk6DfceKdOfLfDulXWLkdaL%2B5alZb6CSQjBb0i6zyCulCbb%2FfCelLcU%2BF2DuWrhk0BQup0g%2Be3y4gxrvzK2yZ%2F3Y1wuhFYwOjaC4m4dkzV2IdLNdbDadQodVgrdI%2FltuUjP3iUZLzYSL4rDk5HWTn%2FdXIU5PsDHokuP9eE953vRJMwoApzin%2FHZ%2FlLIerWZL81iGS7FPwRCY%2Bdm%2BOmSZsDc3kNMKmRXpPUENF5HSRWst4MrJBUGk%2Fer1eOOSUQ%3D%3D HTTP/1.1" 200 0
+2021-10-20 22:00:24,097 INFO    Thread-14 :396695 [upload_job.py:push():131] Uploaded file /home/sebastian/Documents/CQL/CQL-SAC-discrete/wandb/run-20211020_215718-f827095o/files/wandb-summary.json
+2021-10-20 22:00:25,603 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 22:00:25,807 DEBUG   Thread-5  :396695 [connectionpool.py:_make_request():461] https://api.wandb.ai:443 "POST /files/sebastian-dittert/CQL/f827095o/file_stream HTTP/1.1" 200 None
+2021-10-20 22:00:25,812 INFO    MainThread:396695 [internal.py:handle_exit():138] Internal process exited

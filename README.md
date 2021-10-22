@@ -13,6 +13,15 @@ PyTorch implementation of the CQL algorithm ([Paper](https://arxiv.org/pdf/2006.
 # CQL-SAC
 ![alt_text](imgs/sac_cql_wo_alpha.png)
 
+# CQL-SAC-discrete 
+Comparison of a discrete CQL-SAC implementations vs the normal discrete SAC.
+
+### CartPole
+![alt_text](imgs/sac_disc_vs_cql_disc_cp.png)
+
+### LunarLander
+![alt_text](imgs/sac_disc_vs_cql_disc.png)
+
 # Results
 -> wandb project [ ]
 

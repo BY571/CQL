@@ -1,11 +1,13 @@
 # Conservative Q-Learning (CQL)
-PyTorch implementation of the CQL algorithm ([Paper](https://arxiv.org/pdf/2006.04779.pdf)).
+PyTorch implementation of the CQL algorithm ([Paper](https://arxiv.org/pdf/2006.04779.pdf)). Including the discrete action space DQN-CQL version, the continuous action space SAC-CQL version and a discrete CQL-SAC implementation. 
+
 
 # Setup 
 -> conda environment [ ]
 -> requirement.txt [ ]
 
 # Run 
+Select the folder [CQL-DQN, CQL-SAC, CQL-SAC-discrete] of the algorithm you want to train and run: `python train.py`
 
 # Base CQL-DQN 
 ![alt_text](imgs/cql_dqn.png)
@@ -23,7 +25,7 @@ Comparison of a discrete CQL-SAC implementations vs the normal discrete SAC.
 ![alt_text](imgs/sac_disc_vs_cql_disc.png)
 
 # Results
--> wandb project [ ]
+Find all training results and hyperparameter in the [wandb project](https://wandb.ai/sebastian-dittert/CQL?workspace=).
 
 # TODO:
 - update readme [ ]

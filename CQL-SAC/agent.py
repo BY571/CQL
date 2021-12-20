@@ -15,6 +15,13 @@ class CQLSAC(nn.Module):
     def __init__(self,
                         state_size,
                         action_size,
+                        tau,
+                        hidden_size,
+                        learning_rate,
+                        temp,
+                        with_lagrange,
+                        cql_weight,
+                        target_action_gap,
                         device
                 ):
         """Initialize an Agent object.
@@ -31,10 +38,10 @@ class CQLSAC(nn.Module):
 
         self.device = device
         
-        self.gamma = 0.99
-        self.tau = 1e-2
-        hidden_size = 256
-        learning_rate = 5e-4
+        self.gamma = torch.FloatTensor([0.99]).to(device)
+        self.tau = tau
+        hidden_size = hidden_size
+        learning_rate = learning_rate
         self.clip_grad_param = 1
 
         self.target_entropy = -action_size  # -dim(A)
@@ -44,10 +51,10 @@ class CQLSAC(nn.Module):
         self.alpha_optimizer = optim.Adam(params=[self.log_alpha], lr=learning_rate) 
         
         # CQL params
-        self.with_lagrange = False
-        self.temp = 1.0
-        self.cql_weight = 1.0
-        self.target_action_gap = 0.0
+        self.with_lagrange = with_lagrange
+        self.temp = temp
+        self.cql_weight = cql_weight
+        self.target_action_gap = target_action_gap
         self.cql_log_alpha = torch.zeros(1, requires_grad=True)
         self.cql_alpha_optimizer = optim.Adam(params=[self.cql_log_alpha], lr=learning_rate) 
         
@@ -107,7 +114,7 @@ class CQLSAC(nn.Module):
         random_log_probs = math.log(0.5 ** self.action_size)
         return random_values - random_log_probs
     
-    def learn(self, step, experiences, gamma, d=1):
+    def learn(self, experiences):
         """Updates actor, critics and entropy_alpha parameters using given batch of experience tuples.
         Q_targets = r + γ * (min_critic_target(next_state, actor_target(next_state)) - α *log_pi(next_action|next_state))
         Critic_loss = MSE(Q, Q_target)
@@ -145,18 +152,16 @@ class CQLSAC(nn.Module):
             Q_target1_next = self.critic1_target(temp_next_states, next_action).view(states.shape[0], 10, 1).max(1)[0].view(-1, 1)
             Q_target2_next = self.critic2_target(temp_next_states, next_action).view(states.shape[0], 10, 1).max(1)[0].view(-1, 1)
             Q_target_next = torch.min(Q_target1_next, Q_target2_next)
-
             # Compute Q targets for current states (y_i)
-            Q_targets = rewards.cpu() + (gamma * (1 - dones.cpu()) * Q_target_next.cpu()) 
+            Q_targets = rewards[:, None] + (self.gamma * (1 - dones[:, None]) * Q_target_next) 
 
 
         # Compute critic loss
         q1 = self.critic1(states, actions)
         q2 = self.critic2(states, actions)
-        
-        
-        critic1_loss = 0.5 * F.mse_loss(q1.cpu(), Q_targets)
-        critic2_loss = 0.5 * F.mse_loss(q2.cpu(), Q_targets)
+
+        critic1_loss = 0.5 * F.mse_loss(q1, Q_targets)
+        critic2_loss = 0.5 * F.mse_loss(q2, Q_targets)
         
         # CQL addon
         random_actions = torch.FloatTensor(q1.shape[0] * 10, actions.shape[-1]).uniform_(-1, 1).to(self.device)

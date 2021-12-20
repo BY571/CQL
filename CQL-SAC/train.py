@@ -23,7 +23,15 @@ def get_config():
     parser.add_argument("--log_video", type=int, default=0, help="Log agent behaviour to wanbd when set to 1, default: 0")
     parser.add_argument("--save_every", type=int, default=100, help="Saves the network every x epochs, default: 25")
     parser.add_argument("--batch_size", type=int, default=256, help="Batch size, default: 256")
-    
+    parser.add_argument("--hidden_size", type=int, default=256, help="")
+    parser.add_argument("--learning_rate", type=float, default=3e-4, help="")
+    parser.add_argument("--temperature", type=float, default=1.0, help="")
+    parser.add_argument("--cql_weight", type=float, default=1.0, help="")
+    parser.add_argument("--target_action_gap", type=float, default=10, help="")
+    parser.add_argument("--with_lagrange", type=int, default=0, help="")
+    parser.add_argument("--tau", type=float, default=5e-3, help="")
+    parser.add_argument("--eval_every", type=int, default=1, help="")
+
     args = parser.parse_args()
     return args
 

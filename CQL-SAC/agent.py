@@ -101,13 +101,13 @@ class CQLSAC(nn.Module):
         return actor_loss, log_pis
 
     def _compute_policy_values(self, obs_pi, obs_q):
-        with torch.no_grad():
-            actions_pred, log_pis = self.actor_local.evaluate(obs_pi)
+        #with torch.no_grad():
+        actions_pred, log_pis = self.actor_local.evaluate(obs_pi)
         
         qs1 = self.critic1(obs_q, actions_pred)
         qs2 = self.critic2(obs_q, actions_pred)
         
-        return qs1-log_pis, qs2-log_pis
+        return qs1 - log_pis.detach(), qs2 - log_pis.detach()
     
     def _compute_random_values(self, obs, actions, critic):
         random_values = critic(obs, actions)
@@ -146,12 +146,10 @@ class CQLSAC(nn.Module):
         # ---------------------------- update critic ---------------------------- #
         # Get predicted next-state actions and Q values from target models
         with torch.no_grad():
-            next_action, _ = self.actor_local.evaluate(next_states)
-            next_action = next_action.unsqueeze(1).repeat(1, 10, 1).view(next_action.shape[0] * 10, next_action.shape[1])
-            temp_next_states = next_states.unsqueeze(1).repeat(1, 10, 1).view(next_states.shape[0] * 10, next_states.shape[1])
-            Q_target1_next = self.critic1_target(temp_next_states, next_action).view(states.shape[0], 10, 1).max(1)[0].view(-1, 1)
-            Q_target2_next = self.critic2_target(temp_next_states, next_action).view(states.shape[0], 10, 1).max(1)[0].view(-1, 1)
-            Q_target_next = torch.min(Q_target1_next, Q_target2_next)
+            next_action, new_log_pi = self.actor_local.evaluate(next_states)
+            Q_target1_next = self.critic1_target(next_states, next_action)
+            Q_target2_next = self.critic2_target(next_states, next_action)
+            Q_target_next = torch.min(Q_target1_next, Q_target2_next) - self.alpha * new_log_pi
             # Compute Q targets for current states (y_i)
             Q_targets = rewards[:, None] + (self.gamma * (1 - dones[:, None]) * Q_target_next) 
 
@@ -160,8 +158,8 @@ class CQLSAC(nn.Module):
         q1 = self.critic1(states, actions)
         q2 = self.critic2(states, actions)
 
-        critic1_loss = 0.5 * F.mse_loss(q1, Q_targets)
-        critic2_loss = 0.5 * F.mse_loss(q2, Q_targets)
+        critic1_loss = F.mse_loss(q1, Q_targets)
+        critic2_loss = F.mse_loss(q2, Q_targets)
         
         # CQL addon
         random_actions = torch.FloatTensor(q1.shape[0] * 10, actions.shape[-1]).uniform_(-1, 1).to(self.device)
@@ -177,6 +175,7 @@ class CQLSAC(nn.Module):
         
         current_pi_values1 = current_pi_values1.reshape(states.shape[0], num_repeat, 1)
         current_pi_values2 = current_pi_values2.reshape(states.shape[0], num_repeat, 1)
+
         next_pi_values1 = next_pi_values1.reshape(states.shape[0], num_repeat, 1)
         next_pi_values2 = next_pi_values2.reshape(states.shape[0], num_repeat, 1)
         
@@ -187,8 +186,8 @@ class CQLSAC(nn.Module):
         assert cat_q2.shape == (states.shape[0], 3 * num_repeat, 1), f"cat_q2 instead has shape: {cat_q2.shape}"
         
 
-        cql1_scaled_loss = (torch.logsumexp(cat_q1 / self.temp, dim=1).mean() * self.cql_weight * self.temp - q1.mean()) * self.cql_weight
-        cql2_scaled_loss = (torch.logsumexp(cat_q2 / self.temp, dim=1).mean() * self.cql_weight * self.temp - q2.mean()) * self.cql_weight
+        cql1_scaled_loss = ((torch.logsumexp(cat_q1 / self.temp, dim=1).mean() * self.cql_weight * self.temp) - q1.mean()) * self.cql_weight
+        cql2_scaled_loss = ((torch.logsumexp(cat_q2 / self.temp, dim=1).mean() * self.cql_weight * self.temp) - q2.mean()) * self.cql_weight
         
         cql_alpha_loss = torch.FloatTensor([0.0])
         cql_alpha = torch.FloatTensor([0.0])

@@ -104,8 +104,8 @@ def train(config):
                        "Lagrange Alpha Loss": lagrange_alpha_loss,
                        "CQL1 Loss": cql1_loss,
                        "CQL2 Loss": cql2_loss,
-                       "Bellmann error 1": bellmann_error1,
-                       "Bellmann error 2": bellmann_error2,
+                       "Bellman error 1": bellmann_error1,
+                       "Bellman error 2": bellmann_error2,
                        "Alpha": current_alpha,
                        "Lagrange Alpha": lagrange_alpha,
                        "Steps": steps,
@@ -123,7 +123,7 @@ def train(config):
                     wandb.log({"gameplays": wandb.Video(mp4, caption='episode: '+str(i-10), fps=4, format="gif"), "Episode": i})
 
             if i % config.save_every == 0:
-                save(config, save_name="CQL-DQN", model=agent.network, wandb=wandb, ep=0)
+                save(config, save_name="CQL-DQN", model=agent.actor_local, wandb=wandb, ep=0)
 
 if __name__ == "__main__":
     config = get_config()

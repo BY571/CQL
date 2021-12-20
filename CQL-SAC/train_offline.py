@@ -42,12 +42,12 @@ def prep_dataloader(env_id="halfcheetah-medium-v2", batch_size=256, seed=1):
                 tensors[k] = torch.from_numpy(v).float()
             else:
                 tensors[k] = torch.from_numpy(v).long()
-    
+
     tensordata = TensorDataset(tensors["observations"],
                                tensors["actions"],
-                               tensors["rewards"],
+                               tensors["rewards"][:, None],
                                tensors["next_observations"],
-                               tensors["terminals"])
+                               tensors["terminals"][:, None])
     dataloader  = DataLoader(tensordata, batch_size=batch_size, shuffle=True)
     
     if "halfcheetah" in env_id:
@@ -133,8 +133,8 @@ def train(config):
                        "Lagrange Alpha Loss": lagrange_alpha_loss,
                        "CQL1 Loss": cql1_loss,
                        "CQL2 Loss": cql2_loss,
-                       "Bellmann error 1": bellmann_error1,
-                       "Bellmann error 2": bellmann_error2,
+                       "Bellman error 1": bellmann_error1,
+                       "Bellman error 2": bellmann_error2,
                        "Alpha": current_alpha,
                        "Lagrange Alpha": lagrange_alpha,
                        "Batches": batches,

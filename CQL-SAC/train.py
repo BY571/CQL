@@ -9,14 +9,14 @@ import wandb
 import argparse
 from buffer import ReplayBuffer
 import glob
-from utils import save, collect_random
+from utils import save, collect_random, evaluate
 import random
 from agent import CQLSAC
 
 def get_config():
     parser = argparse.ArgumentParser(description='RL')
     parser.add_argument("--run_name", type=str, default="CQL-SAC", help="Run name, default: CQL-SAC")
-    parser.add_argument("--env", type=str, default="Pendulum-v0", help="Gym environment name, default: Pendulum-v0")
+    parser.add_argument("--env", type=str, default="Pendulum-v1", help="Gym environment name, default: Pendulum-v0")
     parser.add_argument("--episodes", type=int, default=300, help="Number of episodes, default: 200")
     parser.add_argument("--buffer_size", type=int, default=100_000, help="Maximal training dataset size, default: 100_000")
     parser.add_argument("--seed", type=int, default=1, help="Seed, default: 1")
@@ -53,8 +53,15 @@ def train(config):
     with wandb.init(project="CQL", name=config.run_name, config=config):
         
         agent = CQLSAC(state_size=env.observation_space.shape[0],
-                         action_size=env.action_space.shape[0],
-                         device=device)
+                        action_size=env.action_space.shape[0],
+                        tau=config.tau,
+                        hidden_size=config.hidden_size,
+                        learning_rate=config.learning_rate,
+                        temp=config.temperature,
+                        with_lagrange=config.with_lagrange,
+                        cql_weight=config.cql_weight,
+                        target_action_gap=config.target_action_gap,
+                        device=device)
 
         wandb.watch(agent, log="gradients", log_freq=10)
 
@@ -64,7 +71,8 @@ def train(config):
         
         if config.log_video:
             env = gym.wrappers.Monitor(env, './video', video_callable=lambda x: x%10==0, force=True)
-
+        eval_reward = evaluate(env, agent)
+        wandb.log({"Test Reward": eval_reward, "Episode": 0, "Steps": steps}, step=steps)
         for i in range(1, config.episodes+1):
             state = env.reset()
             episode_steps = 0
@@ -74,14 +82,13 @@ def train(config):
                 steps += 1
                 next_state, reward, done, _ = env.step(action)
                 buffer.add(state, action, reward, next_state, done)
-                policy_loss, alpha_loss, bellmann_error1, bellmann_error2, cql1_loss, cql2_loss, current_alpha, lagrange_alpha_loss, lagrange_alpha = agent.learn(steps, buffer.sample(), gamma=0.99)
+                policy_loss, alpha_loss, bellmann_error1, bellmann_error2, cql1_loss, cql2_loss, current_alpha, lagrange_alpha_loss, lagrange_alpha = agent.learn(buffer.sample())
                 state = next_state
                 rewards += reward
                 episode_steps += 1
                 if done:
                     break
 
-            
 
             average10.append(rewards)
             total_steps += episode_steps
@@ -102,6 +109,10 @@ def train(config):
                        "Steps": steps,
                        "Episode": i,
                        "Buffer size": buffer.__len__()})
+        
+            if i % config.eval_every == 0:
+                eval_reward = evaluate(env, agent)
+                wandb.log({"Test Reward": eval_reward, "Episode": i, "Steps": steps}, step=steps)
 
             if (i %10 == 0) and config.log_video:
                 mp4list = glob.glob('video/*.mp4')

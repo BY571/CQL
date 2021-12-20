@@ -151,7 +151,7 @@ class CQLSAC(nn.Module):
             Q_target2_next = self.critic2_target(next_states, next_action)
             Q_target_next = torch.min(Q_target1_next, Q_target2_next) - self.alpha * new_log_pi
             # Compute Q targets for current states (y_i)
-            Q_targets = rewards[:, None] + (self.gamma * (1 - dones[:, None]) * Q_target_next) 
+            Q_targets = rewards + (self.gamma * (1 - dones) * Q_target_next) 
 
 
         # Compute critic loss

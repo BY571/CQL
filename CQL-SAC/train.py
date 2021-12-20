@@ -40,8 +40,10 @@ def train(config):
     random.seed(config.seed)
     torch.manual_seed(config.seed)
     env = gym.make(config.env)
+    eval_env = gym.make(config.env)
     
     env.seed(config.seed)
+    eval_env.seed(config.seed + 123)
     env.action_space.seed(config.seed)
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -71,7 +73,7 @@ def train(config):
         
         if config.log_video:
             env = gym.wrappers.Monitor(env, './video', video_callable=lambda x: x%10==0, force=True)
-        eval_reward = evaluate(env, agent)
+        eval_reward = evaluate(eval_env, agent)
         wandb.log({"Test Reward": eval_reward, "Episode": 0, "Steps": steps}, step=steps)
         for i in range(1, config.episodes+1):
             state = env.reset()
@@ -111,7 +113,7 @@ def train(config):
                        "Buffer size": buffer.__len__()})
         
             if i % config.eval_every == 0:
-                eval_reward = evaluate(env, agent)
+                eval_reward = evaluate(eval_env, agent)
                 wandb.log({"Test Reward": eval_reward, "Episode": i, "Steps": steps}, step=steps)
 
             if (i %10 == 0) and config.log_video:

@@ -149,7 +149,7 @@ class CQLSAC(nn.Module):
             next_action, new_log_pi = self.actor_local.evaluate(next_states)
             Q_target1_next = self.critic1_target(next_states, next_action)
             Q_target2_next = self.critic2_target(next_states, next_action)
-            Q_target_next = torch.min(Q_target1_next, Q_target2_next) - self.alpha * new_log_pi
+            Q_target_next = torch.min(Q_target1_next, Q_target2_next) - self.alpha.to(self.device) * new_log_pi
             # Compute Q targets for current states (y_i)
             Q_targets = rewards + (self.gamma * (1 - dones) * Q_target_next) 
 

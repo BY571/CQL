@@ -8,22 +8,23 @@ PyTorch implementation of the CQL algorithm ([Paper](https://arxiv.org/pdf/2006.
 
 # Run 
 Select the folder [CQL-DQN, CQL-SAC, CQL-SAC-discrete] of the algorithm you want to train and run: `python train.py`
-
-# Base CQL-DQN 
+# Online RL Results: 
+## Base CQL-DQN 
 ![alt_text](imgs/cql_dqn.png)
 
-# CQL-SAC
+## CQL-SAC
 ![alt_text](imgs/sac_cql_wo_alpha.png)
 
-# CQL-SAC-discrete 
+## CQL-SAC-discrete 
 Comparison of a discrete CQL-SAC implementations vs the normal discrete SAC.
 
-### CartPole
+#### CartPole
 ![alt_text](imgs/sac_disc_vs_cql_disc_cp.png)
 
-### LunarLander
+#### LunarLander
 ![alt_text](imgs/sac_disc_vs_cql_disc.png)
-
+# Offline RL Results:
+![alt text](imgs/CQL-halfcheetah-medium-v2.png)
 # Results
 Find all training results and hyperparameter in the [wandb project](https://wandb.ai/sebastian-dittert/CQL?workspace=).
 

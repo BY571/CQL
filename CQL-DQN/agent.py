@@ -39,29 +39,38 @@ class CQLAgent():
         else:
             action = random.choices(np.arange(self.action_size), k=1)
         return action
-        
+
+    def cql_loss(self, q_values, current_action):
+        """Computes the CQL loss for a batch of Q-values and actions."""
+        logsumexp = torch.logsumexp(q_values, dim=1, keepdim=True)
+        q_a = q_values.gather(1, current_action)
+    
+        return (logsumexp - q_a).mean()
+
     def learn(self, experiences):
-        self.optimizer.zero_grad()
+        
         states, actions, rewards, next_states, dones = experiences
         with torch.no_grad():
             Q_targets_next = self.target_net(next_states).detach().max(1)[0].unsqueeze(1)
             Q_targets = rewards + (self.gamma * Q_targets_next * (1 - dones))
+
         Q_a_s = self.network(states)
         Q_expected = Q_a_s.gather(1, actions)
         
-        cql1_loss = torch.logsumexp(Q_a_s, dim=1).mean() - Q_a_s.mean()
+        cql1_loss = self.cql_loss(Q_a_s, actions)
 
-        bellmann_error = F.mse_loss(Q_expected, Q_targets)
+        bellman_error = F.mse_loss(Q_expected, Q_targets)
         
-        q1_loss = cql1_loss + 0.5 * bellmann_error
+        q1_loss = cql1_loss + 0.5 * bellman_error
         
+        self.optimizer.zero_grad()
         q1_loss.backward()
-        clip_grad_norm_(self.network.parameters(), 1)
+        clip_grad_norm_(self.network.parameters(), 1.)
         self.optimizer.step()
 
         # ------------------- update target network ------------------- #
         self.soft_update(self.network, self.target_net)
-        return q1_loss.detach().item(), cql1_loss.detach().item(), bellmann_error.detach().item()
+        return q1_loss.detach().item(), cql1_loss.detach().item(), bellman_error.detach().item()
         
         
     def soft_update(self, local_model, target_model):

@@ -17,11 +17,11 @@ def get_config():
     parser = argparse.ArgumentParser(description='RL')
     parser.add_argument("--run_name", type=str, default="CQL-DQN", help="Run name, default: CQL-DQN")
     parser.add_argument("--env", type=str, default="CartPole-v0", help="Gym environment name, default: CartPole-v0")
-    parser.add_argument("--episodes", type=int, default=300, help="Number of episodes, default: 200")
+    parser.add_argument("--episodes", type=int, default=400, help="Number of episodes, default: 200")
     parser.add_argument("--buffer_size", type=int, default=100_000, help="Maximal training dataset size, default: 100_000")
     parser.add_argument("--seed", type=int, default=1, help="Seed, default: 1")
     parser.add_argument("--min_eps", type=float, default=0.01, help="Minimal Epsilon, default: 4")
-    parser.add_argument("--eps_frames", type=int, default=1e3, help="Number of steps for annealing the epsilon value to the min epsilon, default: 1e-5")
+    parser.add_argument("--eps_frames", type=int, default=1e4, help="Number of steps for annealing the epsilon value to the min epsilon, default: 1e5")
     parser.add_argument("--log_video", type=int, default=0, help="Log agent behaviour to wanbd when set to 1, default: 0")
     parser.add_argument("--save_every", type=int, default=100, help="Saves the network every x epochs, default: 25")
     
@@ -76,8 +76,6 @@ def train(config):
                 eps = max(1 - ((steps*d_eps)/config.eps_frames), config.min_eps)
                 if done:
                     break
-
-            
 
             average10.append(rewards)
             total_steps += episode_steps
